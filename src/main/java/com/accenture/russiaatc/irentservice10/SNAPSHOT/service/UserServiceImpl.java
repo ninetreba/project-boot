@@ -22,7 +22,15 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserDto getUser(Long id) {
         User user = userRepository.findById(id).orElseThrow();
-        return User.toUserDto(user);
+        return toUserDto(user);
+    }
+
+    public UserDto toUserDto (User user){
+        UserDto userDto = new UserDto();
+        userDto.setBalance(user.getBalance());
+        userDto.setLogin(user.getLogin());
+        userDto.setId(user.getId());
+        return userDto;
     }
 
 

@@ -1,5 +1,6 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public interface ParkingService {
     Parking getById(Long id);
     List<ParkingDto> getParkingAll();
-    Parking createParking(Parking parking);
+    Parking createParking(CreateParkingDto createParkingDto);
     Parking updateParking(Parking parkingToUpdate);
     Parking deleteParking(Long id);
 }

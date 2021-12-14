@@ -3,6 +3,7 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.controller;
 // Реализовать ParkingController с операциями получение списка парковок,
 // добавление парковки, обновление данных парковки, удаление парковки.
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingService;
@@ -19,13 +20,13 @@ import java.util.List;
 public class ParkingController {
     private final ParkingService parkingService;
 
-    @Autowired // внедрение, инъекция, которую делает спринг за нас
+    @Autowired
     public ParkingController(ParkingService parkingService) {
         this.parkingService = parkingService;
     }
 
 
-    @GetMapping("/all") // говорит, что это гет запрос
+    @GetMapping("/all")
     public List<ParkingDto> getParkingList(){
         return parkingService.getParkingAll();
     }
@@ -36,8 +37,8 @@ public class ParkingController {
     }
 
     @PostMapping
-    public Parking createParking(@RequestBody Parking parking){
-        return parkingService.createParking(parking);
+    public Parking createParking(@RequestBody CreateParkingDto createParkingDto){
+        return parkingService.createParking(createParkingDto);
     }
 
     @DeleteMapping("/{id}")

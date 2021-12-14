@@ -48,10 +48,9 @@ public class Rent {
 
 
     @Column(name = "START_RENT")
-    private LocalDateTime startRent;     // Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+    private LocalDateTime startRent;
 
     @Column(name = "END_RENT")
-    //private Date endRent;
     private LocalDateTime endRent;
 
 

@@ -4,6 +4,7 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
     // admin - создание всех типов, удаление(изм статуса), поиск по `статусу`, типу, парковке
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateTransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
@@ -21,6 +22,7 @@ public interface VehicleService {
     List<TransportDto> findByType(Type type);
     List<TransportDto> findByParking(String name);
     List<TransportDto> findByStatus(Status status);
+    TransportDto createTransport(CreateTransportDto createTransportDto);
 
 }
 

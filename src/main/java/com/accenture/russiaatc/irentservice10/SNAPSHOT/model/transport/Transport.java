@@ -1,10 +1,7 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport;
 
-
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,10 +24,6 @@ public abstract class Transport {
     protected Long id;
 
     //protected String number; I need to generate that
-//    if (type == Type.ELECTRIC_SCOOTER){
-//        number = "ЭСМ-" + id;
-//    } else number = "ВЕЛ-" + id;
-
 
     @Enumerated(EnumType.STRING)
     @Column(name = "TRANSPORT_TYPE")

@@ -12,9 +12,6 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(name = "TRANSPORT_ID_TRANSPORT")
 public class Bicycle extends Transport {
 
-//    @OneToOne(mappedBy = "bicycle")
-//    private Transport transport;
-
     public Bicycle() {}
 
     public Bicycle(Long id, Type type, Condition condition, Status status, Parking currentParking) {

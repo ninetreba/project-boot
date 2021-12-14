@@ -1,5 +1,6 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
@@ -43,8 +44,8 @@ public class ParkingServiceImpl implements ParkingService{
     @Override
     public List<ParkingDto> getParkingAll() {
         List<ParkingDto> parkingDtoList = new ArrayList<>();
-        for (Parking parking : parkingRepository.findAll()){
-            parkingDtoList.add(Parking.toParkingDto(parking));
+        for (Parking parking : parkingRepository.findAllByStatus(Status.WORKING)){
+            parkingDtoList.add(toParkingDto(parking));
         }
         return parkingDtoList;
     }
@@ -52,19 +53,21 @@ public class ParkingServiceImpl implements ParkingService{
     // ok
     @Override
     public Parking getById(Long id) {
-
         return parkingRepository.findById(id).orElseThrow();
     }
 
     // ok
     @Override
-    public Parking createParking(Parking parking){
-        if (isValid(parking)){
-            parkingRepository.save(parking);
-            return parking;
-        } else {
-            throw new IllegalArgumentException("некорректные данные");
-        }
+    public Parking createParking(CreateParkingDto createParkingDto){
+        Parking parking = new Parking();
+        parking.setParkingType(createParkingDto.getParkingType());
+        parking.setStatus(createParkingDto.getStatus());
+        parking.setCoordinateX(createParkingDto.getCoordinateX());
+        parking.setCoordinateY(createParkingDto.getCoordinateY());
+        parking.setRadius(createParkingDto.getRadius());
+        parking.setName(createParkingDto.getName());
+        parkingRepository.save(parking);
+        return parking;
     }
 
     // ok
@@ -83,6 +86,13 @@ public class ParkingServiceImpl implements ParkingService{
             return true;
         }
         return false;
+    }
+
+    public static ParkingDto toParkingDto (Parking parking){
+        ParkingDto parkingDto = new ParkingDto();
+        parkingDto.setId(parking.getId());
+        parkingDto.setName(parking.getName());
+        return parkingDto;
     }
 
 

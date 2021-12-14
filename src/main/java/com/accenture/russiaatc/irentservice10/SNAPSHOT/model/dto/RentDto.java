@@ -1,9 +1,14 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.StatusRent;
-import java.math.BigDecimal;
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+@Setter
+@Getter
 public class RentDto {
     private Long id;
     private StatusRent statusRent;
@@ -14,7 +19,7 @@ public class RentDto {
     private ParkingDto startParkingDto;
     private ParkingDto endParkingDto;
 
-    private Date startRent;     // Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-    private Date endRent;
+    private LocalDateTime startRent;
+    private LocalDateTime endRent;
 
 }
