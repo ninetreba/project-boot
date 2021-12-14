@@ -4,7 +4,6 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +16,7 @@ import java.util.List;
 @Table(name = "Parking", schema = "PUBLIC")
 public class Parking {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "HIBERNATE_SEQUENCE_PARKING")
     @Column(name = "ID_PARKING")
     private Long id;
 
@@ -38,7 +37,6 @@ public class Parking {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-
     @OneToMany(mappedBy = "currentParking")
     private List<Transport> transports;
 
@@ -52,13 +50,6 @@ public class Parking {
         this.radius = radius;
         this.parkingType = parkingType;
         this.status = status;
-    }
-
-    public static ParkingDto toParkingDto (Parking parking){
-        ParkingDto parkingDto = new ParkingDto();
-        parkingDto.setId(parking.getId());
-        parkingDto.setName(parking.getName());
-        return parkingDto;
     }
 
 
