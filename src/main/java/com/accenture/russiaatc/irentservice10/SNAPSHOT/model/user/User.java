@@ -34,13 +34,5 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public static UserDto toUserDto (User user){
-        UserDto userDto = new UserDto();
-        userDto.setBalance(user.getBalance());
-        userDto.setLogin(user.getLogin());
-        userDto.setId(user.getId());
-        return userDto;
-    }
-
 
 }

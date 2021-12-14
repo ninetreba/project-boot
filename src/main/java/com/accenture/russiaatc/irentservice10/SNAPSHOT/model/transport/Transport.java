@@ -4,6 +4,7 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Transport {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO) // IDENTITY
     @Column(name = "ID_TRANSPORT")
     protected Long id;
 
@@ -29,7 +30,6 @@ public abstract class Transport {
 //    if (type == Type.ELECTRIC_SCOOTER){
 //        number = "ЭСМ-" + id;
 //    } else number = "ВЕЛ-" + id;
-
 
 
     @Enumerated(EnumType.STRING)
@@ -48,32 +48,6 @@ public abstract class Transport {
     @ManyToOne
     @JoinColumn(name = "CURRENT_PARKING")
     protected Parking currentParking;
-
-
-    public static TransportDto toTransportDto(Transport transport){
-
-        TransportDto transportDto = new TransportDto();
-
-        if (transport.getType() == Type.ELECTRIC_SCOOTER) {
-            ElectricScooter electricScooter = (ElectricScooter) transport;
-
-            transportDto.setId(electricScooter.getId());
-            transportDto.setType(electricScooter.getType());
-            transportDto.setCurrentParking(Parking.toParkingDto(electricScooter.getCurrentParking()));
-            transportDto.setCondition(electricScooter.getCondition());
-            transportDto.setBattery(electricScooter.getBattery());
-            transportDto.setMaxSpeed(electricScooter.getMaxSpeed());
-        } else {
-            transportDto.setId(transport.getId());
-            transportDto.setType(transport.getType());
-            transportDto.setCurrentParking(Parking.toParkingDto(transport.getCurrentParking()));
-            transportDto.setCondition(transport.getCondition());
-            transportDto.setBattery(-1);
-            transportDto.setMaxSpeed(-1);
-        }
-        return transportDto;
-    }
-
 
 
 }

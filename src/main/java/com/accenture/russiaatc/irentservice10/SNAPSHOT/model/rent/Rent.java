@@ -19,7 +19,7 @@ import java.util.Date;
 @Table(name = "RENT", schema = "PUBLIC")
 public class Rent {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQUENCE_RENT")
     @Column(name = "ID_RENT")
     private Long id;
 
@@ -51,15 +51,11 @@ public class Rent {
     private LocalDateTime startRent;     // Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
     @Column(name = "END_RENT")
+    //private Date endRent;
     private LocalDateTime endRent;
 
 
-
-
-
-
     public Rent() {}
-
 
 
 }

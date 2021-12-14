@@ -12,8 +12,8 @@ public class TransportDto {
     //private String number;
     private Type type;
     private Condition condition;
-    private int battery;
-    private int maxSpeed;
+    private int battery = -1;
+    private int maxSpeed = -1;
     private ParkingDto currentParking;
 
 }
