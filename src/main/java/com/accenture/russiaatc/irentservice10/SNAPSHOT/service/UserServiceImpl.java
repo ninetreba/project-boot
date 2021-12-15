@@ -1,13 +1,15 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.UserDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-// сделать названия методов единообразными, схожими по названиям
+// сделать названия методов единообразными, схожими по названиям для всех сервсайсов
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -21,8 +23,14 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserDto getUser(Long id) {
+        //User user = userRepository.findById(id).get();
         User user = userRepository.findById(id).orElseThrow();
         return toUserDto(user);
+    }
+
+    @Override
+    public User getById(Long id) {
+        return userRepository.findById(id).orElseThrow();
     }
 
     public UserDto toUserDto (User user){

@@ -23,8 +23,9 @@ public class ElectricScooter extends Transport {
 
     public ElectricScooter() {}
 
-    public ElectricScooter(Long id, Type type, Condition condition, Status status, Parking currentParking, int battery, int maxSpeed) {
-        super(id, type, condition, status, currentParking);
+    public ElectricScooter(Long id, Type type, Condition condition, Status status, Parking currentParking,
+                           String number, int battery, int maxSpeed) {
+        super(id, number, type, condition, status, currentParking);
         this.battery = battery;
         this.maxSpeed = maxSpeed;
     }

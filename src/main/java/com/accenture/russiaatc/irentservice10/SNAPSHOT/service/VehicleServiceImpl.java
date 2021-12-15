@@ -4,12 +4,15 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateTransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.ParkingType;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Bicycle;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.ElectricScooter;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.ParkingRepository;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.VehicleRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +28,8 @@ public class VehicleServiceImpl implements VehicleService{
     private final VehicleRepository vehicleRepository;
     private final ParkingRepository parkingRepository;
 
+    private final Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
+
     @Autowired
     public VehicleServiceImpl(VehicleRepository vehicleRepository, ParkingRepository parkingRepository) {
         this.vehicleRepository = vehicleRepository;
@@ -33,8 +38,15 @@ public class VehicleServiceImpl implements VehicleService{
 
     public TransportDto createTransport(CreateTransportDto createTransportDto){
         Parking parking = parkingRepository.getById(createTransportDto.getParkingId());
+
+        if (createTransportDto.getType() == Type.ELECTRIC_SCOOTER && parking.getParkingType() == ParkingType.BICYCLE_ONLY
+        || createTransportDto.getType() == Type.BICYCLE && parking.getParkingType() == ParkingType.ELECTRIC_SCOOTER_ONLY){
+            throw new IllegalArgumentException("транспорт нельзя поместить на эту паркову");
+        }
+
         if (createTransportDto.getType() == Type.ELECTRIC_SCOOTER){
             ElectricScooter electricScooter = new ElectricScooter();
+
             electricScooter.setType(createTransportDto.getType());
             electricScooter.setStatus(Status.WORKING);
             electricScooter.setCondition(createTransportDto.getCondition());
@@ -42,6 +54,9 @@ public class VehicleServiceImpl implements VehicleService{
             electricScooter.setBattery(createTransportDto.getBattery());
             electricScooter.setMaxSpeed(createTransportDto.getMaxSpeed());
             vehicleRepository.save(electricScooter);
+            electricScooter.setNumber("ЭСМ-" + electricScooter.getId());
+            vehicleRepository.save(electricScooter);
+            logger.info("создание транспорта.");
             return toTransportDto((Transport) electricScooter);
         } else {
             Bicycle bicycle = new Bicycle();
@@ -56,9 +71,10 @@ public class VehicleServiceImpl implements VehicleService{
 
     public List<TransportDto> getTransportAll(){
         List<TransportDto> transportDtoList = new ArrayList<>();
-        for (Transport transport : vehicleRepository.findAll()){
+        for (Transport transport : vehicleRepository.findByStatus(Status.WORKING)){
             transportDtoList.add(toTransportDto(transport));
         }
+        logger.info("получение всех транспортов.");
         return transportDtoList;
     }
 
@@ -111,6 +127,7 @@ public class VehicleServiceImpl implements VehicleService{
             ElectricScooter electricScooter = (ElectricScooter) transport;
 
             transportDto.setId(electricScooter.getId());
+            transportDto.setNumber(transport.getNumber());
             transportDto.setType(electricScooter.getType());
             transportDto.setCurrentParking(ParkingServiceImpl.toParkingDto(electricScooter.getCurrentParking()));
             transportDto.setCondition(electricScooter.getCondition());
@@ -118,6 +135,7 @@ public class VehicleServiceImpl implements VehicleService{
             transportDto.setMaxSpeed(electricScooter.getMaxSpeed());
         } else {
             transportDto.setId(transport.getId());
+            transportDto.setNumber(transport.getNumber());
             transportDto.setType(transport.getType());
             transportDto.setCurrentParking(ParkingServiceImpl.toParkingDto(transport.getCurrentParking()));
             transportDto.setCondition(transport.getCondition());

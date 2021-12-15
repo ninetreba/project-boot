@@ -14,8 +14,8 @@ public class Bicycle extends Transport {
 
     public Bicycle() {}
 
-    public Bicycle(Long id, Type type, Condition condition, Status status, Parking currentParking) {
-        super(id, type, condition, status, currentParking);
+    public Bicycle(Long id, Type type, Condition condition, Status status, Parking currentParking, String number) {
+        super(id, number, type, condition, status, currentParking);
     }
 
 }

@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TripRepository extends JpaRepository<Rent, Long> {
-    Rent findByIdAndStatusRent(Long id, StatusRent statusRent);
+    Rent findByUser_IdAndStatusRentAndTransport_Id(Long idUser, StatusRent statusRent, Long idTransport);
 }

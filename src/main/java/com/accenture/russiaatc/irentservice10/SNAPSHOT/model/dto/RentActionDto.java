@@ -11,5 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class RentActionDto {
     private Long idTransport;
-    private String login;
+    private Long idUser;
 }

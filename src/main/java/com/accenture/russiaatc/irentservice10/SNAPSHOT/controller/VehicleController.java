@@ -29,7 +29,7 @@ public class VehicleController {
     @Autowired
     public VehicleController(VehicleService vehicleService) { this.vehicleService = vehicleService;}
 
-    @GetMapping("/all") // говорит, что это гет запрос
+    @GetMapping("/all")
     public List<TransportDto> getParkingList(){
         return vehicleService.getTransportAll();
     }

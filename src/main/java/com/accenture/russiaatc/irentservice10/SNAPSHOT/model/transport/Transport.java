@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.boot.model.relational.Sequence;
+import org.hibernate.boot.model.source.internal.hbm.HibernateTypeSourceImpl;
 
 import javax.persistence.*;
 
@@ -23,7 +25,8 @@ public abstract class Transport {
     @Column(name = "ID_TRANSPORT")
     protected Long id;
 
-    //protected String number; I need to generate that
+    protected String number;
+    // I need to generate that
 
     @Enumerated(EnumType.STRING)
     @Column(name = "TRANSPORT_TYPE")

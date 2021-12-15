@@ -1,11 +1,14 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.configuration.PriceProperties;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.RentActionDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.RentDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.Rent;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.StatusRent;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.TripRepository;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.UserRepository;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.VehicleRepository;
@@ -22,52 +25,92 @@ public class TripServiceImpl implements TripService{
     private final TripRepository tripRepository;
     private final VehicleRepository vehicleRepository;
     private final UserRepository userRepository;
+    private final PriceProperties priceProperties;
 
 
     @Autowired
-    public TripServiceImpl(TripRepository tripRepository, VehicleRepository vehicleRepository, UserRepository userRepository) {
+    public TripServiceImpl(TripRepository tripRepository, VehicleRepository vehicleRepository, UserRepository userRepository, PriceProperties priceProperties) {
         this.tripRepository = tripRepository;
         this.vehicleRepository = vehicleRepository;
         this.userRepository = userRepository;
+        this.priceProperties = priceProperties;
     }
 
+
     public RentDto createRent(RentActionDto rentActionDto){
-
-        // проверки баланса и тс
-
-
         Rent rent = new Rent();
         Transport transport = vehicleRepository.findById(rentActionDto.getIdTransport()).orElseThrow();
 
+        User user = userRepository.getById(rentActionDto.getIdUser());
+
+        if (transport.getType() == Type.ELECTRIC_SCOOTER){
+            if (user.getBalance().compareTo(priceProperties.getStartingPriceElectricScooter()) == -1) {
+                throw new IllegalArgumentException("недостаточно средств");
+            }
+        } else {
+            if (user.getBalance().compareTo(priceProperties.getStartingPriceBicycle()) == -1){
+                throw new IllegalArgumentException("недостаточно средств");
+            }
+        }
+
+        // проверка свободно ли тс!
+
+        // int compareTo(BigDecimal other): сравнивает два числа.
+        // Возвращает -1, если текущий объект меньше числа other, 1 - если текущий объект больше и 0 - если числа равны
+
+
+
         rent.setUser(userRepository.getById(rentActionDto.getIdTransport()));
 
-        // IN_PROGRESS
         rent.setStatusRent(StatusRent.IN_PROGRESS);
         rent.setStartRent(LocalDateTime.now());
         rent.setTransport(transport);
         rent.setStartParking(transport.getCurrentParking());
 
 
+        tripRepository.save(rent);
+
+
 // to RentDto
 
 
+
+// на методы find, get посмотреть чтоб были проверки если нет такой парковки, транспорта
+// по поводу парковки у машины. типа какая парковка когда машина ездит но
+//  с другой стороны надо давать пользователю ток свободные машины на парковке
     return null;
     }
 
-    public void closeRent(Long id){
-        // в настройках сделать цена за минуту и нач цена для начала поездки
-        Rent rent = tripRepository.findByIdAndStatusRent(id, StatusRent.IN_PROGRESS);
-        rent.setStatusRent(StatusRent.CLOSED);
+
+    public void closeRent(RentActionDto rentActionDto){
+        Rent rent = tripRepository.findByUser_IdAndStatusRentAndTransport_Id(rentActionDto.getIdUser(), StatusRent.IN_PROGRESS, rentActionDto.getIdTransport());
         rent.setEndRent(LocalDateTime.now());
 
-        long diff = MINUTES.between(rent.getStartRent(), rent.getEndRent());
+        BigDecimal durationRent = new BigDecimal(MINUTES.between(rent.getStartRent(), rent.getEndRent()));
 
+        BigDecimal cost;
         if (rent.getTransport().getType() == Type.ELECTRIC_SCOOTER){
-            rent.setCost(new BigDecimal(diff * 10));
-        } else rent.setCost(new BigDecimal(diff * 6));
+            cost = durationRent.multiply(priceProperties.getPricePerMinElectricScooter());
+            cost = cost.add(priceProperties.getStartingPriceElectricScooter());
+        } else {
+            cost = durationRent.multiply(priceProperties.getPricePerMinBicycle());
+            cost = cost.add(priceProperties.getStartingPriceBicycle());
+        }
+
+        User user = userRepository.getById(rentActionDto.getIdUser());
+        if (user.getBalance().compareTo(cost) == -1){
+            throw new IllegalArgumentException("недостаточно средств, поездка не закрыта"); // поменять на свои рантайм эксэпшн
+        }
+
+        // задает парковку закрытия. обработка что на этой парковке можно поставить этот тип транспорта
+
+        rent.setStatusRent(StatusRent.CLOSED);
+        rent.setCost(cost);
+        Parking endParking;
 
 
-
+        tripRepository.save(rent);
+        // to dto
     }
 
 

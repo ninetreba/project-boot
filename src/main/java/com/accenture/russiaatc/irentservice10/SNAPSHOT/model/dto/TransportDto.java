@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class TransportDto {
     private Long id;
-    //private String number;
+    private String number;
     private Type type;
     private Condition condition;
     private int battery = -1;

@@ -3,6 +3,7 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.controller;
 // Реализовать UserController с операцией получения данных текущего пользователя.
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.UserDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,5 +27,6 @@ public class UserController {
     public UserDto getUser(@PathVariable Long id){
         return userService.getUser(id);
     }
+
 
 }
