@@ -1,0 +1,116 @@
+2021-12-15 02:34:44,353 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 6536 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-15 02:34:44,359 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-15 02:34:44,360 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-15 02:34:45,546 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-15 02:34:45,653 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92 ms. Found 4 JPA repository interfaces.
+2021-12-15 02:34:46,266 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-15 02:34:46,295 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-15 02:34:46,296 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-15 02:34:46,296 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-15 02:34:46,444 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-15 02:34:46,444 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1973 ms
+2021-12-15 02:34:46,624 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-15 02:34:46,811 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-15 02:34:46,913 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-15 02:34:47,097 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-15 02:34:47,365 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-15 02:34:47,845 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-15 02:34:48,699 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-15 02:34:48,712 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-15 02:34:49,213 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-15 02:34:49,884 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-15 02:34:49,935 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-15 02:34:49,947 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.446 seconds (JVM running for 10.854)
+2021-12-15 02:36:36,466 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-15 02:36:36,473 |-INFO  in DispatcherServlet o.s.w.s.FrameworkServlet - Initializing Servlet 'dispatcherServlet'
+2021-12-15 02:36:36,529 |-INFO  in DispatcherServlet o.s.w.s.FrameworkServlet - Completed initialization in 55 ms
+2021-12-15 02:36:37,202 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - создание транспорта.
+2021-12-15 02:37:03,235 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение всех транспортов.
+2021-12-15 02:39:15,515 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-15 02:39:15,620 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-15 02:39:15,639 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-15 14:23:26,624 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 6344 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-15 14:23:26,628 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-15 14:23:26,628 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-15 14:23:27,680 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-15 14:23:27,826 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 126 ms. Found 4 JPA repository interfaces.
+2021-12-15 14:23:28,485 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-15 14:23:28,497 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-15 14:23:28,498 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-15 14:23:28,499 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-15 14:23:28,667 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-15 14:23:28,668 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1973 ms
+2021-12-15 14:23:29,028 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-15 14:23:29,196 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-15 14:23:29,277 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-15 14:23:29,341 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-15 14:23:29,517 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-15 14:23:29,665 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-15 14:23:30,556 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-15 14:23:30,569 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-15 14:23:31,148 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-15 14:23:31,547 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-15 14:23:31,577 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-15 14:23:31,593 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.237 seconds (JVM running for 8.467)
+2021-12-15 14:24:21,968 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-15 14:24:21,969 |-INFO  in DispatcherServlet o.s.w.s.FrameworkServlet - Initializing Servlet 'dispatcherServlet'
+2021-12-15 14:24:21,970 |-INFO  in DispatcherServlet o.s.w.s.FrameworkServlet - Completed initialization in 1 ms
+2021-12-15 14:25:10,718 |-ERROR in [dispatcherServlet] o.a.j.l.DirectJDKLog - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException] with root cause
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: null
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.UserServiceImpl.lambda$getById$0(UserServiceImpl.java:33)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:401)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.UserServiceImpl.getById(UserServiceImpl.java:33)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.controller.UserController.getUserr(UserController.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-12-15 14:26:56,474 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-15 14:26:56,477 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-15 14:26:56,482 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
