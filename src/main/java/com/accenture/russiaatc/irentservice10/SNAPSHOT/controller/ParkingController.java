@@ -16,7 +16,7 @@ import java.util.List;
 // admin - созд, измен, удаление(изм статуса), получение всех парковок
 
 @RestController
-@RequestMapping("/parking") // запросы, кот обрабат этот контроллер должны нач с url parking
+@RequestMapping("/parking")
 public class ParkingController {
     private final ParkingService parkingService;
 
