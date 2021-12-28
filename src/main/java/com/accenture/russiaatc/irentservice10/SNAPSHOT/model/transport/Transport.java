@@ -2,12 +2,7 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.boot.model.relational.Sequence;
-import org.hibernate.boot.model.source.internal.hbm.HibernateTypeSourceImpl;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -26,7 +21,6 @@ public abstract class Transport {
     protected Long id;
 
     protected String number;
-    // I need to generate that
 
     @Enumerated(EnumType.STRING)
     @Column(name = "TRANSPORT_TYPE")
@@ -39,6 +33,16 @@ public abstract class Transport {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name ="TRANSPORT_STATUS")
+    private TransportStatus transportStatus;
+
+    @Column(name = "COORDINATE_X")
+    private Double coordinateX;
+
+    @Column(name = "COORDINATE_Y")
+    private Double coordinateY;
 
 
     @ManyToOne

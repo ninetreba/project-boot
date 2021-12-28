@@ -2,8 +2,8 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking;
 
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +12,7 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
 @Entity
 @Table(name = "Parking", schema = "PUBLIC")
 public class Parking {
@@ -23,12 +24,12 @@ public class Parking {
     private String name;
 
     @Column(name = "COORDINATE_X")
-    private int coordinateX; // Double
+    private Double coordinateX; // Double
 
     @Column(name = "COORDINATE_Y")
-    private int coordinateY;
+    private Double coordinateY;
 
-    private int radius;
+    private Double radius;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "PARKING_TYPE")
@@ -41,16 +42,6 @@ public class Parking {
     private List<Transport> transports;
 
     public Parking(){}
-
-    public Parking(Long id, String name, int coordinateX, int coordinateY, int radius, ParkingType parkingType, Status status) {
-        this.id = id;
-        this.name = name;
-        this.coordinateX = coordinateX;
-        this.coordinateY = coordinateY;
-        this.radius = radius;
-        this.parkingType = parkingType;
-        this.status = status;
-    }
 
 
 }

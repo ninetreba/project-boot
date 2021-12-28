@@ -10,3 +10,20 @@ spring:
     username: sa
     password:
 
+bot:
+  name: tripprojectbot
+  token: 5044307142:AAHnE8KjO1UAoahWsAE0HQ0ly2k3mZNfCsY
+
+
+price:
+  startingPriceBicycle : 10
+  startingPriceElectricScooter : 14
+  pricePerMinBicycle : 5
+  pricePerMinElectricScooter : 9
+
+maxNumber:
+  trips : 3
+
+balance:
+  start : 800
+

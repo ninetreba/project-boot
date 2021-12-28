@@ -1,10 +1,14 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.controller;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CloseRentDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateRentDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDtoShort;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.RentDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 // Реализовать TripController с операциями «начать поездку» и «завершить поездку» -- rent
 // client - создание, закрытие, получение всех своих аренд
@@ -20,8 +24,15 @@ public class TripController {
         this.tripService = tripService;
     }
 
+    @PostMapping
+    public RentDto createRent(@RequestBody CreateRentDto createRentDto){
+        return tripService.createRent(createRentDto);
+    }
 
-
+    @PutMapping
+    public RentDto closeRent(@RequestBody CloseRentDto closeRentDto){
+        return tripService.closeRent(closeRentDto);
+    }
 
 
 }

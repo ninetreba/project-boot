@@ -5,6 +5,7 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -16,6 +17,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
+@Accessors(chain = true)
 @Table(name = "RENT", schema = "PUBLIC")
 public class Rent {
     @Id

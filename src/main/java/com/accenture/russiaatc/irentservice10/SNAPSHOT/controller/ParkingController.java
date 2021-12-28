@@ -3,9 +3,9 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.controller;
 // Реализовать ParkingController с операциями получение списка парковок,
 // добавление парковки, обновление данных парковки, удаление парковки.
 
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateParkingDto;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDtoShort;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,18 +27,18 @@ public class ParkingController {
 
 
     @GetMapping("/all")
-    public List<ParkingDto> getParkingList(){
+    public List<ParkingDtoShort> getParkingList(){
         return parkingService.getParkingAll();
     }
 
     @PutMapping
-    public Parking updateParking(@RequestBody Parking parking){
-        return parkingService.updateParking(parking);
+    public Parking updateParking(@RequestBody ParkingDto parkingDto){
+        return parkingService.updateParking(parkingDto);
     }
 
     @PostMapping
-    public Parking createParking(@RequestBody CreateParkingDto createParkingDto){
-        return parkingService.createParking(createParkingDto);
+    public Parking createParking(@RequestBody ParkingDto parkingDto){
+        return parkingService.createParking(parkingDto);
     }
 
     @DeleteMapping("/{id}")

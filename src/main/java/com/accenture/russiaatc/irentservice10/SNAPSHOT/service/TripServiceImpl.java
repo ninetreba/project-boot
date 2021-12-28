@@ -1,116 +1,146 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.configuration.PriceProperties;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.RentActionDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.configuration.TripProperties;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CloseRentDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateRentDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.RentDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.ParkingType;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.Rent;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.StatusRent;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.TransportStatus;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.TripRepository;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.UserRepository;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.VehicleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 
-import static java.time.temporal.ChronoUnit.MINUTES;
+import static java.time.temporal.ChronoUnit.SECONDS;
 
+@RequiredArgsConstructor
 @Service
 public class TripServiceImpl implements TripService{
     private final TripRepository tripRepository;
-    private final VehicleRepository vehicleRepository;
-    private final UserRepository userRepository;
-    private final PriceProperties priceProperties;
+    private final VehicleService vehicleService;
+    private final UserService userService;
+    private final TripProperties tripProperties;
+    private final ParkingService parkingService;
 
 
-    @Autowired
-    public TripServiceImpl(TripRepository tripRepository, VehicleRepository vehicleRepository, UserRepository userRepository, PriceProperties priceProperties) {
-        this.tripRepository = tripRepository;
-        this.vehicleRepository = vehicleRepository;
-        this.userRepository = userRepository;
-        this.priceProperties = priceProperties;
-    }
 
+    public RentDto createRent(CreateRentDto createRentDto) {
+        if (tripRepository.countByUser_IdAndStatusRent(createRentDto.getIdUser(), StatusRent.IN_PROGRESS) >= tripProperties.getMaxNumberTrips()) {
+            throw new BusinessRuntimeException(ErrorCodeEnum.TOO_MUCH_RENTS);
+        }
 
-    public RentDto createRent(RentActionDto rentActionDto){
-        Rent rent = new Rent();
-        Transport transport = vehicleRepository.findById(rentActionDto.getIdTransport()).orElseThrow();
+        Transport transport = vehicleService.getById(createRentDto.getIdTransport());
+        if (transport.getTransportStatus() == TransportStatus.BUSY) {
+            throw new BusinessRuntimeException(ErrorCodeEnum.TRANSPORT_BUSY);
+        }
 
-        User user = userRepository.getById(rentActionDto.getIdUser());
+        User user = userService.getById(createRentDto.getIdUser());
+        Type transportType = transport.getType();
 
-        if (transport.getType() == Type.ELECTRIC_SCOOTER){
-            if (user.getBalance().compareTo(priceProperties.getStartingPriceElectricScooter()) == -1) {
-                throw new IllegalArgumentException("недостаточно средств");
-            }
+        if (transportType == Type.ELECTRIC_SCOOTER &&
+                user.getBalance().compareTo(tripProperties.getStartingPriceElectricScooter()) == -1) {
+            throw new BusinessRuntimeException(ErrorCodeEnum.NO_MONEY);
         } else {
-            if (user.getBalance().compareTo(priceProperties.getStartingPriceBicycle()) == -1){
-                throw new IllegalArgumentException("недостаточно средств");
+            if (user.getBalance().compareTo(tripProperties.getStartingPriceBicycle()) == -1) {
+                throw new BusinessRuntimeException(ErrorCodeEnum.NO_MONEY);
             }
         }
 
-        // проверка свободно ли тс!
+        BigDecimal cost = new BigDecimal(0);
+        if (transportType == Type.ELECTRIC_SCOOTER) {
+            cost = tripProperties.getStartingPriceElectricScooter();
+        } else {
+            cost = tripProperties.getStartingPriceBicycle();
+        }
 
-        // int compareTo(BigDecimal other): сравнивает два числа.
-        // Возвращает -1, если текущий объект меньше числа other, 1 - если текущий объект больше и 0 - если числа равны
+        transport.setTransportStatus(TransportStatus.BUSY);
 
+        Rent rent = new Rent()
+                .setCost(cost)
+                .setUser(user)
+                .setStatusRent(StatusRent.IN_PROGRESS)
+                .setStartRent(LocalDateTime.now())
+                .setTransport(transport)
+                .setStartParking(transport.getCurrentParking());
 
-
-        rent.setUser(userRepository.getById(rentActionDto.getIdTransport()));
-
-        rent.setStatusRent(StatusRent.IN_PROGRESS);
-        rent.setStartRent(LocalDateTime.now());
-        rent.setTransport(transport);
-        rent.setStartParking(transport.getCurrentParking());
-
-
+        vehicleService.save(transport);
         tripRepository.save(rent);
-
-
-// to RentDto
-
-
-
-// на методы find, get посмотреть чтоб были проверки если нет такой парковки, транспорта
-// по поводу парковки у машины. типа какая парковка когда машина ездит но
-//  с другой стороны надо давать пользователю ток свободные машины на парковке
-    return null;
+        return toRentDto(rent);
     }
 
 
-    public void closeRent(RentActionDto rentActionDto){
-        Rent rent = tripRepository.findByUser_IdAndStatusRentAndTransport_Id(rentActionDto.getIdUser(), StatusRent.IN_PROGRESS, rentActionDto.getIdTransport());
-        rent.setEndRent(LocalDateTime.now());
 
-        BigDecimal durationRent = new BigDecimal(MINUTES.between(rent.getStartRent(), rent.getEndRent()));
+    public RentDto closeRent(CloseRentDto closeRentDto){
+        Rent rent = tripRepository.findByUser_IdAndStatusRentAndTransport_Id(closeRentDto.getIdUser(), StatusRent.IN_PROGRESS, closeRentDto.getIdTransport());
 
-        BigDecimal cost;
-        if (rent.getTransport().getType() == Type.ELECTRIC_SCOOTER){
-            cost = durationRent.multiply(priceProperties.getPricePerMinElectricScooter());
-            cost = cost.add(priceProperties.getStartingPriceElectricScooter());
+        Transport transport = vehicleService.getById(closeRentDto.getIdTransport());
+        Type transportType = transport.getType();
+
+        Parking endParking = parkingService.getParking(closeRentDto.getIdParking());
+
+        if (transportType == Type.ELECTRIC_SCOOTER && endParking.getParkingType() == ParkingType.BICYCLE_ONLY
+                || transportType == Type.BICYCLE && endParking.getParkingType() == ParkingType.ELECTRIC_SCOOTER_ONLY){
+            throw new BusinessRuntimeException(ErrorCodeEnum.WRONG_TYPE_PARKING);
+        }
+
+        LocalDateTime endTime = LocalDateTime.now();
+        int scale = 2;
+        BigDecimal durationRent = new BigDecimal(SECONDS.between(rent.getStartRent(), endTime));
+        durationRent = durationRent.divide(new BigDecimal(60), scale, RoundingMode.CEILING);
+
+        BigDecimal cost = new BigDecimal(0);
+        if (transportType == Type.ELECTRIC_SCOOTER){
+            cost = durationRent.multiply(tripProperties.getPricePerMinElectricScooter());
+            cost = cost.add(tripProperties.getStartingPriceElectricScooter());
         } else {
-            cost = durationRent.multiply(priceProperties.getPricePerMinBicycle());
-            cost = cost.add(priceProperties.getStartingPriceBicycle());
+            cost = durationRent.multiply(tripProperties.getPricePerMinBicycle());
+            cost = cost.add(tripProperties.getStartingPriceBicycle());
         }
 
-        User user = userRepository.getById(rentActionDto.getIdUser());
+        User user = userService.getById(closeRentDto.getIdUser());
         if (user.getBalance().compareTo(cost) == -1){
-            throw new IllegalArgumentException("недостаточно средств, поездка не закрыта"); // поменять на свои рантайм эксэпшн
+            throw new BusinessRuntimeException(ErrorCodeEnum.NO_MONEY);
         }
+        user.setBalance(user.getBalance().subtract(cost));
 
-        // задает парковку закрытия. обработка что на этой парковке можно поставить этот тип транспорта
 
         rent.setStatusRent(StatusRent.CLOSED);
+        transport.setTransportStatus(TransportStatus.FREE);
         rent.setCost(cost);
-        Parking endParking;
+        rent.setEndRent(LocalDateTime.now());
+        rent.setEndParking(endParking);
 
-
+        vehicleService.save(transport);
         tripRepository.save(rent);
-        // to dto
+        userService.save(user);
+        return toRentDto(rent);
+    }
+
+
+    public RentDto toRentDto(Rent rent){
+        RentDto rentDto = RentDto.builder().id(rent.getId())
+                .statusRent(rent.getStatusRent())
+                .cost(rent.getCost())
+                .userDto(UserServiceImpl.toUserDto(rent.getUser()))
+                .transportDto(VehicleServiceImpl.toTransportDto(rent.getTransport()))
+                .startParkingDto(ParkingServiceImpl.toParkingDto(rent.getStartParking()))
+                .startRent(rent.getStartRent())
+                .endRent(rent.getEndRent()).build();
+        if (rent.getEndParking() != null){
+            rentDto.setEndParkingDto(ParkingServiceImpl.toParkingDto(rent.getEndParking()));
+        }
+        return rentDto;
     }
 
 

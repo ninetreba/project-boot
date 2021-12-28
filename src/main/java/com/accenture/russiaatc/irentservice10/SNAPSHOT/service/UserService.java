@@ -9,4 +9,5 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 public interface UserService {
     UserDto getUser(Long id);
     User getById(Long id);
+    void save(User user);
 }

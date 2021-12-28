@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-// Реализовать VehicleController с операциями получение списка ТС
-// с поиском по типу и статусу, создание ТС, удаление ТС.
 
 // клиент - поиск по статусу, типу, парковке
 // admin - создание всех типов, удаление(изм статуса), поиск по статусу, типу, парковке
@@ -21,23 +19,28 @@ import java.util.List;
 public class VehicleController {
     private final VehicleService vehicleService;
 
-    @PostMapping
-    public TransportDto createTransport(@RequestBody CreateTransportDto createTransportDto){
-        return vehicleService.createTransport(createTransportDto);
-    }
-
     @Autowired
     public VehicleController(VehicleService vehicleService) { this.vehicleService = vehicleService;}
+
 
     @GetMapping("/all")
     public List<TransportDto> getParkingList(){
         return vehicleService.getTransportAll();
     }
 
-
     @GetMapping("/{id}")
     public TransportDto getParking(@PathVariable Long id){
-        return vehicleService.getById(id);
+        return vehicleService.getTransport(id);
+    }
+
+    @PostMapping
+    public TransportDto createTransport(@RequestBody CreateTransportDto createTransportDto){
+        return vehicleService.createTransport(createTransportDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public TransportDto deleteParking(@PathVariable Long id){
+        return vehicleService.deleteTransport(id);
     }
 
     @GetMapping("/type/{type}")
@@ -45,9 +48,9 @@ public class VehicleController {
         return vehicleService.findByType(type);
     }
 
-    @GetMapping("/parking/{name}")
-    public List<TransportDto> findByParking(@PathVariable String name){
-        return vehicleService.findByParking(name);
+    @GetMapping("/parking/{id}")
+    public List<TransportDto> findByParking(@PathVariable Long id){
+        return vehicleService.findByParking(id);
     }
 
     @GetMapping("/status/{status}")

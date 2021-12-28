@@ -1,19 +1,18 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateTransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.ParkingType;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Bicycle;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.ElectricScooter;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.*;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.ParkingRepository;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.VehicleRepository;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,6 +22,7 @@ import java.util.List;
 // клиент - поиск по статусу, типу, парковке
 // admin - создание всех типов, удаление(изм статуса), поиск по статусу, типу, парковке
 
+@RequiredArgsConstructor
 @Service
 public class VehicleServiceImpl implements VehicleService{
     private final VehicleRepository vehicleRepository;
@@ -30,18 +30,13 @@ public class VehicleServiceImpl implements VehicleService{
 
     private final Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
 
-    @Autowired
-    public VehicleServiceImpl(VehicleRepository vehicleRepository, ParkingRepository parkingRepository) {
-        this.vehicleRepository = vehicleRepository;
-        this.parkingRepository = parkingRepository;
-    }
 
     public TransportDto createTransport(CreateTransportDto createTransportDto){
         Parking parking = parkingRepository.getById(createTransportDto.getParkingId());
 
         if (createTransportDto.getType() == Type.ELECTRIC_SCOOTER && parking.getParkingType() == ParkingType.BICYCLE_ONLY
         || createTransportDto.getType() == Type.BICYCLE && parking.getParkingType() == ParkingType.ELECTRIC_SCOOTER_ONLY){
-            throw new IllegalArgumentException("транспорт нельзя поместить на эту паркову");
+            throw new BusinessRuntimeException(ErrorCodeEnum.WRONG_TYPE_PARKING);
         }
 
         if (createTransportDto.getType() == Type.ELECTRIC_SCOOTER){
@@ -49,42 +44,71 @@ public class VehicleServiceImpl implements VehicleService{
 
             electricScooter.setType(createTransportDto.getType());
             electricScooter.setStatus(Status.WORKING);
+
+            electricScooter.setCoordinateX(parking.getCoordinateX() + parking.getRadius() * 0.3);
+            electricScooter.setCoordinateY(parking.getCoordinateY() + parking.getRadius() * 0.4);
+
             electricScooter.setCondition(createTransportDto.getCondition());
             electricScooter.setCurrentParking(parking);
             electricScooter.setBattery(createTransportDto.getBattery());
             electricScooter.setMaxSpeed(createTransportDto.getMaxSpeed());
+            electricScooter.setTransportStatus(TransportStatus.FREE);
             vehicleRepository.save(electricScooter);
             electricScooter.setNumber("ЭСМ-" + electricScooter.getId());
             vehicleRepository.save(electricScooter);
-            logger.info("создание транспорта.");
+            logger.info("создание самоката.");
             return toTransportDto((Transport) electricScooter);
-        } else {
-            Bicycle bicycle = new Bicycle();
-            bicycle.setType(createTransportDto.getType());
-            bicycle.setStatus(Status.WORKING);
-            bicycle.setCondition(createTransportDto.getCondition());
-            bicycle.setCurrentParking(parking);
-            vehicleRepository.save(bicycle);
-            return toTransportDto((Transport) bicycle);
         }
+        Bicycle bicycle = new Bicycle();
+        bicycle.setCoordinateX(parking.getCoordinateX() + parking.getRadius() * 0.3);
+        bicycle.setCoordinateY(parking.getCoordinateY() + parking.getRadius() * 0.4);
+        bicycle.setTransportStatus(TransportStatus.FREE);
+        bicycle.setType(createTransportDto.getType());
+        bicycle.setStatus(Status.WORKING);
+        bicycle.setCondition(createTransportDto.getCondition());
+        bicycle.setCurrentParking(parking);
+        vehicleRepository.save(bicycle);
+        bicycle.setNumber("ВЕЛ-" + bicycle.getId());
+        vehicleRepository.save(bicycle);
+        logger.info("создание велосипеда.");
+        return toTransportDto((Transport) bicycle);
+
     }
 
     public List<TransportDto> getTransportAll(){
+        logger.info("получение всех транспортов.");
         List<TransportDto> transportDtoList = new ArrayList<>();
         for (Transport transport : vehicleRepository.findByStatus(Status.WORKING)){
             transportDtoList.add(toTransportDto(transport));
         }
-        logger.info("получение всех транспортов.");
         return transportDtoList;
     }
 
-    // ok
-    public TransportDto getById(Long id){
-        return toTransportDto(vehicleRepository.findById(id).orElseThrow());
+    @Override
+    public TransportDto getTransport(Long id){
+        logger.info("получение транспорта.");
+        return toTransportDto(vehicleRepository.findById(id).orElseThrow(
+                () -> new BusinessRuntimeException(ErrorCodeEnum.TRANSPORT_NOT_FOUND)
+        ));
+    }
+
+    @Override
+    public Transport getById(Long id){
+        logger.info("получение транспорта.");
+        return vehicleRepository.findById(id).orElseThrow(
+                () -> new BusinessRuntimeException(ErrorCodeEnum.TRANSPORT_NOT_FOUND)
+        );
+    }
+
+    public Transport findByNumber(String number){
+        return vehicleRepository.findByNumber(number).orElseThrow(
+                () -> new BusinessRuntimeException(ErrorCodeEnum.TRANSPORT_NOT_FOUND)
+        );
     }
 
 
     public TransportDto deleteTransport(Long id){
+        logger.info("удаление транспорта.");
         Transport transport = vehicleRepository.findById(id).orElseThrow();
         transport.setStatus(Status.DELETED);
         vehicleRepository.save(transport);
@@ -92,7 +116,6 @@ public class VehicleServiceImpl implements VehicleService{
     }
 
 
-    // ok
     public List<TransportDto> findByType(Type type){
         List<TransportDto> transportDtoList = new ArrayList<>();
 
@@ -102,10 +125,10 @@ public class VehicleServiceImpl implements VehicleService{
         return transportDtoList;
     }
 
-    // обработка если в парковке нет машин
-    public List<TransportDto> findByParking(String name){
+
+    public List<TransportDto> findByParking(Long id){
         List<TransportDto> transportDtoList = new ArrayList<>();
-        for (Transport transport : vehicleRepository.findByCurrentParking_name(name)){
+        for (Transport transport : vehicleRepository.findByCurrentParking_Id(id)){
             transportDtoList.add(toTransportDto(transport));
         }
         return transportDtoList;
@@ -119,7 +142,21 @@ public class VehicleServiceImpl implements VehicleService{
         return transportDtoList;
     }
 
-    public TransportDto toTransportDto(Transport transport){
+    public void save(Transport transport){
+        vehicleRepository.save(transport);
+    }
+
+
+    public List<TransportDto> findByTransportStatusAndStatus(TransportStatus transportStatus, Status status){
+        List<TransportDto> transportDtoList = new ArrayList<>();
+        for (Transport transport : vehicleRepository.findByTransportStatusAndStatus(transportStatus, status)){
+            transportDtoList.add(toTransportDto(transport));
+        }
+        return transportDtoList;
+    }
+
+
+    public static TransportDto toTransportDto(Transport transport){
 
         TransportDto transportDto = new TransportDto();
 
@@ -128,6 +165,7 @@ public class VehicleServiceImpl implements VehicleService{
 
             transportDto.setId(electricScooter.getId());
             transportDto.setNumber(transport.getNumber());
+            transportDto.setStatus(transport.getStatus());
             transportDto.setType(electricScooter.getType());
             transportDto.setCurrentParking(ParkingServiceImpl.toParkingDto(electricScooter.getCurrentParking()));
             transportDto.setCondition(electricScooter.getCondition());
@@ -136,6 +174,7 @@ public class VehicleServiceImpl implements VehicleService{
         } else {
             transportDto.setId(transport.getId());
             transportDto.setNumber(transport.getNumber());
+            transportDto.setStatus(transport.getStatus());
             transportDto.setType(transport.getType());
             transportDto.setCurrentParking(ParkingServiceImpl.toParkingDto(transport.getCurrentParking()));
             transportDto.setCondition(transport.getCondition());

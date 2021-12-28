@@ -1,116 +1,1289 @@
-2021-12-15 02:34:44,353 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 6536 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
-2021-12-15 02:34:44,359 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
-2021-12-15 02:34:44,360 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
-2021-12-15 02:34:45,546 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-15 02:34:45,653 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92 ms. Found 4 JPA repository interfaces.
-2021-12-15 02:34:46,266 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2021-12-15 02:34:46,295 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
-2021-12-15 02:34:46,296 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
-2021-12-15 02:34:46,296 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
-2021-12-15 02:34:46,444 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
-2021-12-15 02:34:46,444 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1973 ms
-2021-12-15 02:34:46,624 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
-2021-12-15 02:34:46,811 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
-2021-12-15 02:34:46,913 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-15 02:34:47,097 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
-2021-12-15 02:34:47,365 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-15 02:34:47,845 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-12-15 02:34:48,699 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-15 02:34:48,712 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-15 02:34:49,213 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-15 02:34:49,884 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
-2021-12-15 02:34:49,935 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2021-12-15 02:34:49,947 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.446 seconds (JVM running for 10.854)
-2021-12-15 02:36:36,466 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-12-15 02:36:36,473 |-INFO  in DispatcherServlet o.s.w.s.FrameworkServlet - Initializing Servlet 'dispatcherServlet'
-2021-12-15 02:36:36,529 |-INFO  in DispatcherServlet o.s.w.s.FrameworkServlet - Completed initialization in 55 ms
-2021-12-15 02:36:37,202 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - создание транспорта.
-2021-12-15 02:37:03,235 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение всех транспортов.
-2021-12-15 02:39:15,515 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-15 02:39:15,620 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2021-12-15 02:39:15,639 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
-2021-12-15 14:23:26,624 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 6344 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
-2021-12-15 14:23:26,628 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
-2021-12-15 14:23:26,628 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
-2021-12-15 14:23:27,680 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-12-15 14:23:27,826 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 126 ms. Found 4 JPA repository interfaces.
-2021-12-15 14:23:28,485 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2021-12-15 14:23:28,497 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
-2021-12-15 14:23:28,498 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
-2021-12-15 14:23:28,499 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
-2021-12-15 14:23:28,667 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
-2021-12-15 14:23:28,668 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1973 ms
-2021-12-15 14:23:29,028 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
-2021-12-15 14:23:29,196 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
-2021-12-15 14:23:29,277 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-12-15 14:23:29,341 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
-2021-12-15 14:23:29,517 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-12-15 14:23:29,665 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-12-15 14:23:30,556 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-12-15 14:23:30,569 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-12-15 14:23:31,148 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-12-15 14:23:31,547 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
-2021-12-15 14:23:31,577 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2021-12-15 14:23:31,593 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.237 seconds (JVM running for 8.467)
-2021-12-15 14:24:21,968 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-12-15 14:24:21,969 |-INFO  in DispatcherServlet o.s.w.s.FrameworkServlet - Initializing Servlet 'dispatcherServlet'
-2021-12-15 14:24:21,970 |-INFO  in DispatcherServlet o.s.w.s.FrameworkServlet - Completed initialization in 1 ms
-2021-12-15 14:25:10,718 |-ERROR in [dispatcherServlet] o.a.j.l.DirectJDKLog - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException] with root cause
-com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: null
-	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.UserServiceImpl.lambda$getById$0(UserServiceImpl.java:33)
+2021-12-27 00:44:13,580 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 11752 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 00:44:13,598 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 00:44:13,599 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 00:44:15,163 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 00:44:15,365 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 182 ms. Found 4 JPA repository interfaces.
+2021-12-27 00:44:16,512 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 00:44:16,536 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 00:44:16,537 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 00:44:16,538 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 00:44:16,822 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 00:44:16,822 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3103 ms
+2021-12-27 00:44:17,077 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 00:44:17,371 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 00:44:17,487 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 00:44:17,581 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 00:44:17,878 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 00:44:18,094 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 00:44:19,369 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 00:44:19,387 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 00:44:20,678 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 00:44:22,163 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 00:44:22,212 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 00:44:22,232 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 9.625 seconds (JVM running for 13.121)
+2021-12-27 00:45:10,965 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:10,970 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:15,367 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:15,368 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:17,127 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:17,128 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:19,323 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:19,324 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:21,431 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:21,432 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:22,430 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:22,430 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:26,865 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:26,866 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:27,990 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:27,991 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:28,951 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:28,951 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:29,601 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:29,602 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:30,247 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:30,247 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:30,841 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:30,842 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:31,455 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:31,457 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:33,194 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:33,194 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:35,032 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:35,033 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:35,824 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:35,825 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:36,573 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:36,574 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:37,199 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:37,199 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:37,867 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:37,868 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:38,556 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:38,557 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:39,256 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:39,258 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:39,892 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:39,892 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:40,667 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:40,668 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:41,295 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:41,296 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:41,907 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:41,908 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:42,486 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:42,487 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:43,120 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:43,121 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:43,677 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:43,678 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:44,280 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:44,281 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:44,893 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:44,894 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:55,398 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:45:55,399 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:46:49,733 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:46:49,734 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:47:00,800 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Задайте id транспорта.
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.StartTripCommand.executeCommand(StartTripCommand.java:53)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:47:16,547 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение транспорта.
+2021-12-27 00:47:16,586 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Транспорт занят
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripServiceImpl.createRent(TripServiceImpl.java:45)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.StartTripCommand.executeCommand(StartTripCommand.java:65)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:47:37,846 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение транспорта.
+2021-12-27 00:47:53,792 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение транспорта.
+2021-12-27 00:47:53,797 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Транспорт занят
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripServiceImpl.createRent(TripServiceImpl.java:45)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.StartTripCommand.executeCommand(StartTripCommand.java:65)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:48:01,340 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.FinishTripCommand.executeCommand(FinishTripCommand.java:51)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:48:26,294 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение транспорта.
+2021-12-27 00:54:48,954 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 5408 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 00:54:48,959 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 00:54:48,960 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 00:54:50,208 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 00:54:50,362 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 4 JPA repository interfaces.
+2021-12-27 00:54:51,170 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 00:54:51,186 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 00:54:51,187 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 00:54:51,202 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 00:54:51,413 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 00:54:51,413 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2377 ms
+2021-12-27 00:54:51,619 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 00:54:51,879 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 00:54:51,968 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 00:54:52,082 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 00:54:52,369 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 00:54:52,714 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 00:54:54,101 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 00:54:54,124 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 00:54:55,407 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 00:54:57,032 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 00:54:57,083 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 00:54:57,104 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 8.998 seconds (JVM running for 14.826)
+2021-12-27 00:55:38,624 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:55:38,627 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:56:18,544 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:46)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:56:18,545 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:49)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 00:56:33,682 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 00:56:33,686 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 00:56:33,691 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-27 01:14:18,886 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 5708 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 01:14:18,892 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 01:14:18,892 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 01:14:19,960 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 01:14:20,269 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 281 ms. Found 4 JPA repository interfaces.
+2021-12-27 01:14:20,923 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 01:14:20,935 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 01:14:20,936 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 01:14:20,936 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 01:14:21,101 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 01:14:21,102 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2130 ms
+2021-12-27 01:14:21,309 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 01:14:21,485 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 01:14:21,551 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 01:14:21,618 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 01:14:21,793 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 01:14:21,937 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 01:14:23,084 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 01:14:23,094 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 01:14:23,913 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 01:14:24,821 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 01:14:24,849 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 01:14:24,862 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.792 seconds (JVM running for 9.44)
+2021-12-27 01:14:40,301 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 152
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:45)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.ParkingCommand.executeCommand(ParkingCommand.java:24)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 01:14:40,304 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:48)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.ParkingCommand.executeCommand(ParkingCommand.java:24)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 01:14:47,285 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Telegram send message error
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error sending message: [400] Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 221
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:129)
+	at org.telegram.telegrambots.meta.api.methods.send.SendMessage.deserializeResponse(SendMessage.java:32)
+	at org.telegram.telegrambots.bots.DefaultAbsSender.sendApiMethod(DefaultAbsSender.java:1012)
+	at org.telegram.telegrambots.meta.bots.AbsSender.execute(AbsSender.java:64)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:45)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 01:14:47,285 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Ошибка при отправке сообщения в телеграм
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.sendAnswer(MyBotCommand.java:48)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.SearchVehicleCommand.executeCommand(SearchVehicleCommand.java:38)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 01:14:49,466 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Задайте id транспорта.
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.StartTripCommand.executeCommand(StartTripCommand.java:53)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:26)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 01:15:54,577 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 01:15:54,579 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 01:15:54,583 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-27 14:48:28,238 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 10448 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 14:48:28,242 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 14:48:28,243 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 14:48:29,898 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 14:48:30,016 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+2021-12-27 14:48:30,634 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 14:48:30,647 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 14:48:30,647 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 14:48:30,659 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 14:48:30,816 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 14:48:30,817 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2491 ms
+2021-12-27 14:48:30,987 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 14:48:31,168 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 14:48:31,240 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 14:48:31,302 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 14:48:31,494 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 14:48:31,655 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 14:48:32,952 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 14:48:32,971 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 14:48:33,924 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 14:48:35,055 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 14:48:35,097 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 14:48:35,115 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 7.624 seconds (JVM running for 11.086)
+2021-12-27 14:49:46,804 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 14:49:46,806 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 14:49:46,808 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-27 14:57:52,369 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 7156 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 14:57:52,373 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 14:57:52,373 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 14:57:53,273 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 14:57:53,451 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 148 ms. Found 4 JPA repository interfaces.
+2021-12-27 14:57:54,091 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 14:57:54,103 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 14:57:54,104 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 14:57:54,105 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 14:57:54,269 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 14:57:54,270 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1822 ms
+2021-12-27 14:57:54,491 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 14:57:54,710 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 14:57:54,777 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 14:57:54,865 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 14:57:55,055 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 14:57:55,199 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 14:57:56,066 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 14:57:56,078 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 14:57:56,952 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 14:57:57,959 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 14:57:57,988 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 14:57:58,002 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.494 seconds (JVM running for 8.479)
+2021-12-27 14:58:46,221 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 14:58:46,223 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 14:58:46,229 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-27 14:58:56,444 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 6744 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 14:58:56,449 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 14:58:56,450 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 14:58:57,426 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 14:58:57,559 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+2021-12-27 14:58:58,149 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 14:58:58,161 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 14:58:58,162 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 14:58:58,162 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 14:58:58,315 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 14:58:58,316 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1786 ms
+2021-12-27 14:58:58,474 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 14:58:58,619 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 14:58:58,682 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 14:58:58,748 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 14:58:58,925 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 14:58:59,066 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 14:58:59,786 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 14:58:59,797 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 14:59:00,703 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 14:59:01,863 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 14:59:01,957 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 14:59:02,019 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.41 seconds (JVM running for 8.358)
+2021-12-27 15:01:10,217 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:01:10,222 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 15:01:10,225 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-27 15:03:24,408 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 6044 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 15:03:24,418 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 15:03:24,418 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 15:03:25,448 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 15:03:25,582 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115 ms. Found 4 JPA repository interfaces.
+2021-12-27 15:03:26,163 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 15:03:26,174 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 15:03:26,175 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 15:03:26,176 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 15:03:26,337 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 15:03:26,337 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1800 ms
+2021-12-27 15:03:26,493 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 15:03:26,632 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 15:03:26,691 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 15:03:26,763 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 15:03:26,940 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 15:03:27,091 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 15:03:27,926 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 15:03:27,937 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:03:30,191 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 15:03:32,514 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 15:03:32,581 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 15:03:32,602 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 8.821 seconds (JVM running for 10.974)
+2021-12-27 15:06:34,788 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:06:34,790 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 15:06:34,793 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-27 15:09:57,321 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 10756 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 15:09:57,324 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 15:09:57,325 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 15:09:58,341 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 15:09:58,466 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 107 ms. Found 4 JPA repository interfaces.
+2021-12-27 15:09:59,084 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 15:09:59,098 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 15:09:59,099 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 15:09:59,099 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 15:09:59,283 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 15:09:59,283 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1893 ms
+2021-12-27 15:09:59,442 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 15:09:59,609 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 15:09:59,684 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 15:09:59,774 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 15:09:59,977 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 15:10:00,168 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 15:10:00,919 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 15:10:00,929 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:10:01,748 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 15:10:02,668 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 15:10:02,692 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 15:10:02,706 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.087 seconds (JVM running for 8.64)
+2021-12-27 15:11:25,409 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:11:25,411 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 15:11:25,414 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-27 15:12:29,867 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 6948 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 15:12:29,870 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 15:12:29,871 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 15:12:30,692 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 15:12:30,824 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 109 ms. Found 4 JPA repository interfaces.
+2021-12-27 15:12:31,385 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 15:12:31,395 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 15:12:31,396 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 15:12:31,396 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 15:12:31,566 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 15:12:31,566 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1629 ms
+2021-12-27 15:12:31,757 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 15:12:31,905 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 15:12:31,961 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 15:12:32,023 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 15:12:32,158 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 15:12:32,289 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 15:12:33,225 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 15:12:33,236 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:12:33,968 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 15:12:34,856 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 15:12:34,879 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 15:12:34,892 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 5.674 seconds (JVM running for 8.007)
+2021-12-27 15:16:18,778 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:16:18,781 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 15:16:18,784 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2021-12-27 15:26:21,884 |-INFO  in Application o.s.b.StartupInfoLogger - Starting Application using Java 15.0.2 on DESKTOP-U0OGVV4 with PID 4304 (C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT\target\classes started by nikol in C:\Users\nikol\IdeaProjects\irent-service-1.0.0-SNAPSHOT)
+2021-12-27 15:26:21,888 |-DEBUG in Application o.s.b.StartupInfoLogger - Running with Spring Boot v2.6.1, Spring v5.3.13
+2021-12-27 15:26:21,888 |-INFO  in Application o.s.b.SpringApplication - No active profile set, falling back to default profiles: default
+2021-12-27 15:26:22,980 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 15:26:23,120 |-INFO  in RepositoryConfigurationDelegate o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115 ms. Found 4 JPA repository interfaces.
+2021-12-27 15:26:23,746 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-12-27 15:26:23,758 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-27 15:26:23,758 |-INFO  in StandardService o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2021-12-27 15:26:23,759 |-INFO  in StandardEngine o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-27 15:26:23,930 |-INFO  in [/] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2021-12-27 15:26:23,931 |-INFO  in ServletWebServerApplicationContext o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1978 ms
+2021-12-27 15:26:24,092 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-12-27 15:26:24,283 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-12-27 15:26:24,434 |-INFO  in LogHelper o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 15:26:24,501 |-INFO  in Version o.h.Version - HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-12-27 15:26:24,673 |-INFO  in Version o.h.a.c.r.j.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 15:26:24,815 |-INFO  in Dialect o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-27 15:26:25,571 |-INFO  in JtaPlatformInitiator o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 15:26:25,583 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:26:26,970 |-WARN  in JpaBaseConfiguration$JpaWebConfiguration o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 15:26:27,845 |-INFO  in Http11NioProtocol o.a.j.l.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+2021-12-27 15:26:27,872 |-INFO  in TomcatWebServer o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-27 15:26:27,889 |-INFO  in Application o.s.b.StartupInfoLogger - Started Application in 6.756 seconds (JVM running for 9.283)
+2021-12-27 15:27:16,029 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение транспорта.
+2021-12-27 15:27:33,143 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Транспорт не найден
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleServiceImpl.lambda$findByNumber$2(VehicleServiceImpl.java:105)
 	at java.base/java.util.Optional.orElseThrow(Optional.java:401)
-	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.UserServiceImpl.getById(UserServiceImpl.java:33)
-	at com.accenture.russiaatc.irentservice10.SNAPSHOT.controller.UserController.getUserr(UserController.java:33)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-2021-12-15 14:26:56,474 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-12-15 14:26:56,477 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2021-12-15 14:26:56,482 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleServiceImpl.findByNumber(VehicleServiceImpl.java:104)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.FinishTripCommand.executeCommand(FinishTripCommand.java:36)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:27)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 15:27:54,725 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение транспорта.
+2021-12-27 15:27:54,729 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Некорректный тип парковки
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripServiceImpl.closeRent(TripServiceImpl.java:94)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.FinishTripCommand.executeCommand(FinishTripCommand.java:47)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:27)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 15:28:03,123 |-ERROR in MyBotCommand c.a.r.i.S.t.c.MyBotCommand - Command execute error
+com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException: Парковка не найдена
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingServiceImpl.lambda$getParkingByName$1(ParkingServiceImpl.java:48)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:401)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingServiceImpl.getParkingByName(ParkingServiceImpl.java:47)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.FinishTripCommand.executeCommand(FinishTripCommand.java:37)
+	at com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command.MyBotCommand.execute(MyBotCommand.java:27)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand.processMessage(BotCommand.java:78)
+	at org.telegram.telegrambots.extensions.bots.commandbot.commands.CommandRegistry.executeCommand(CommandRegistry.java:109)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2021-12-27 15:28:10,315 |-INFO  in VehicleServiceImpl c.a.r.i.S.s.VehicleServiceImpl - получение транспорта.
+2021-12-27 15:32:18,281 |-INFO  in LocalContainerEntityManagerFactoryBean o.s.o.j.AbstractEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 15:32:18,282 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2021-12-27 15:32:18,285 |-INFO  in HikariDataSource c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
