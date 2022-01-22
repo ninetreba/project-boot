@@ -14,6 +14,5 @@ public interface ParkingRepository extends JpaRepository<Parking, Long> {
     @Override
     Optional<Parking> findById(Long aLong);
     Optional<Parking> findByName(String name);
-
     List<Parking> findAllByStatus(Status status);
 }

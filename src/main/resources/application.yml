@@ -1,14 +1,18 @@
-#server:
-#  port: 8081
-#  context-path: /my-app
+server:
+  port: 8086
+#  context-path: /
 
 
 spring:
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:~/project
+#    driverClassName: org.h2.Driver
+#    url: jdbc:h2:~/project
+    url: jdbc:h2:tcp:localhost/~/project
+#    url: jdbc:h2:tcp:localhost:9090/~/project
     username: sa
     password:
+
 
 bot:
   name: tripprojectbot
@@ -21,8 +25,10 @@ price:
   pricePerMinBicycle : 5
   pricePerMinElectricScooter : 9
 
+
 maxNumber:
   trips : 3
+
 
 balance:
   start : 800

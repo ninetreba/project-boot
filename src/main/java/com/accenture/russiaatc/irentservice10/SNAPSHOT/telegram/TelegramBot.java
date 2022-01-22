@@ -58,10 +58,6 @@ public class TelegramBot extends TelegramLongPollingCommandBot {
 
     }
 
-//    @Override
-//    protected void processInvalidCommandUpdate(Update update) {
-//
-//    }
 
     public String getBotUsername() {
         return botUsername;

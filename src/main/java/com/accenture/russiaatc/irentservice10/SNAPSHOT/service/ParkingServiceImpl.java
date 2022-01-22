@@ -2,12 +2,15 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.mapper.ParkingMapper;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDtoShort;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.ParkingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,21 +19,21 @@ import java.util.List;
 // пользователь - получение всех парковок
 // admin - созд, измен, удаление(изм статуса), получение всех парковок
 
+@RequiredArgsConstructor
 @Service
 public class ParkingServiceImpl implements ParkingService{
+    private final Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
     private final ParkingRepository parkingRepository;
-
-    @Autowired
-    public ParkingServiceImpl(ParkingRepository parkingRepository) {
-        this.parkingRepository = parkingRepository;
-    }
+    private final ParkingMapper mapper;
 
 
     @Override
-    public List<ParkingDtoShort> getParkingAll() {
-        List<ParkingDtoShort> parkingDtoList = new ArrayList<>();
+    public List<ParkingDto> getParkings() {
+        logger.info("получение всех парковок.");
+
+        List<ParkingDto> parkingDtoList = new ArrayList<>();
         for (Parking parking : parkingRepository.findAllByStatus(Status.WORKING)){
-            parkingDtoList.add(toParkingDto(parking));
+            parkingDtoList.add(mapper.toDto(parking));
         }
         return parkingDtoList;
     }
@@ -51,16 +54,16 @@ public class ParkingServiceImpl implements ParkingService{
 
 
     @Override
-    public Parking createParking(ParkingDto parkingDto){
+    public void createParking(CreateParkingDto createParkingDto){
         Parking parking = new Parking();
-        parking.setParkingType(parkingDto.getParkingType());
-        parking.setStatus(parkingDto.getStatus());
-        parking.setCoordinateX(parkingDto.getCoordinateX());
-        parking.setCoordinateY(parkingDto.getCoordinateY());
-        parking.setRadius(parkingDto.getRadius());
-        parking.setName(parkingDto.getName());
+        parking.setParkingType(createParkingDto.getParkingType());
+        parking.setStatus(createParkingDto.getStatus());
+        parking.setLongitude(createParkingDto.getLongitude());
+        parking.setLatitude(createParkingDto.getLatitude());
+        parking.setRadius(createParkingDto.getRadius());
+        parking.setName(createParkingDto.getName());
         parkingRepository.save(parking);
-        return parking;
+        //return toParkingDto(parking);
     }
 
     @Override
@@ -70,8 +73,8 @@ public class ParkingServiceImpl implements ParkingService{
         }
         Parking parkingOld = getParking(parkingDto.getId());
         parkingOld.setName(parkingDto.getName());
-        parkingOld.setCoordinateX(parkingDto.getCoordinateX());
-        parkingOld.setCoordinateY(parkingDto.getCoordinateY());
+        parkingOld.setLongitude(parkingDto.getLongitude());
+        parkingOld.setLatitude(parkingDto.getLatitude());
         parkingOld.setRadius(parkingDto.getRadius());
         parkingOld.setParkingType(parkingDto.getParkingType());
         parkingOld.setStatus(parkingDto.getStatus());
@@ -89,7 +92,7 @@ public class ParkingServiceImpl implements ParkingService{
     }
 
     private boolean isValid(ParkingDto parkingDto){
-        if (parkingDto.getCoordinateX() >= 0 && parkingDto.getCoordinateY() >= 0 && parkingDto.getRadius() > 0
+        if (parkingDto.getLongitude() >= 0 && parkingDto.getLatitude() >= 0 && parkingDto.getRadius() > 0
         && parkingDto.getParkingType() != null && parkingDto.getStatus() != null) {
             return true;
         }
@@ -97,13 +100,21 @@ public class ParkingServiceImpl implements ParkingService{
     }
 
 
-    public static ParkingDtoShort toParkingDto (Parking parking){
-        ParkingDtoShort parkingDto = new ParkingDtoShort();
+    public static ParkingDto toParkingDto (Parking parking){
+        ParkingDto parkingDto = new ParkingDto();
         parkingDto.setId(parking.getId());
         parkingDto.setName(parking.getName());
+
         parkingDto.setParkingType(parking.getParkingType());
+        parkingDto.setStatus(parking.getStatus());
+
+        parkingDto.setLatitude(parking.getLatitude());
+        parkingDto.setLongitude(parking.getLongitude());
+        parkingDto.setRadius(parking.getRadius());
         return parkingDto;
     }
+    
+
 
 
 

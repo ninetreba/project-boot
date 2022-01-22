@@ -38,11 +38,10 @@ public abstract class Transport {
     @Column(name ="TRANSPORT_STATUS")
     private TransportStatus transportStatus;
 
-    @Column(name = "COORDINATE_X")
-    private Double coordinateX;
+    //  Сначала указывается широта, затем долгота.
+    private Double longitude;
 
-    @Column(name = "COORDINATE_Y")
-    private Double coordinateY;
+    private Double latitude;
 
 
     @ManyToOne

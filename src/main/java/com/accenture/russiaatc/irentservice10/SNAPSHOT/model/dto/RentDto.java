@@ -15,11 +15,11 @@ public class RentDto {
     private Long id;
     private StatusRent statusRent;
     private BigDecimal cost;
-    private UserDto userDto;
 
+    private UserDto userDto;
     private TransportDto transportDto;
-    private ParkingDtoShort startParkingDto;
-    private ParkingDtoShort endParkingDto;
+    private ParkingDto startParkingDto;
+    private ParkingDto endParkingDto;
 
     private LocalDateTime startRent;
     private LocalDateTime endRent;

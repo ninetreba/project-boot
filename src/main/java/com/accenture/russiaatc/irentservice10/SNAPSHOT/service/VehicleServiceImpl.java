@@ -2,6 +2,7 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.mapper.TransportMapper;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateTransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
@@ -19,20 +20,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-// клиент - поиск по статусу, типу, парковке
-// admin - создание всех типов, удаление(изм статуса), поиск по статусу, типу, парковке
-
 @RequiredArgsConstructor
 @Service
-public class VehicleServiceImpl implements VehicleService{
+public class VehicleServiceImpl implements VehicleService {
     private final VehicleRepository vehicleRepository;
     private final ParkingRepository parkingRepository;
+
+    private final TransportMapper transportMapper;
 
     private final Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
 
 
+
     public TransportDto createTransport(CreateTransportDto createTransportDto){
-        Parking parking = parkingRepository.getById(createTransportDto.getParkingId());
+        Parking parking = parkingRepository.getById(createTransportDto.getCurrentParking().getId());
 
         if (createTransportDto.getType() == Type.ELECTRIC_SCOOTER && parking.getParkingType() == ParkingType.BICYCLE_ONLY
         || createTransportDto.getType() == Type.BICYCLE && parking.getParkingType() == ParkingType.ELECTRIC_SCOOTER_ONLY){
@@ -43,16 +44,22 @@ public class VehicleServiceImpl implements VehicleService{
             ElectricScooter electricScooter = new ElectricScooter();
 
             electricScooter.setType(createTransportDto.getType());
-            electricScooter.setStatus(Status.WORKING);
+            electricScooter.setStatus(Status.WORKING); // ?
 
-            electricScooter.setCoordinateX(parking.getCoordinateX() + parking.getRadius() * 0.3);
-            electricScooter.setCoordinateY(parking.getCoordinateY() + parking.getRadius() * 0.4);
+//            electricScooter.setLongitude(parking.getLongitude() + parking.getRadius() * 0.3);
+//            electricScooter.setLatitude(parking.getLatitude() + parking.getRadius() * 0.4);
+
+            electricScooter.setLongitude(createTransportDto.getLongitude());
+            electricScooter.setLatitude(createTransportDto.getLatitude());
 
             electricScooter.setCondition(createTransportDto.getCondition());
             electricScooter.setCurrentParking(parking);
+
+
+
             electricScooter.setBattery(createTransportDto.getBattery());
             electricScooter.setMaxSpeed(createTransportDto.getMaxSpeed());
-            electricScooter.setTransportStatus(TransportStatus.FREE);
+            electricScooter.setTransportStatus(createTransportDto.getTransportStatus());
             vehicleRepository.save(electricScooter);
             electricScooter.setNumber("ЭСМ-" + electricScooter.getId());
             vehicleRepository.save(electricScooter);
@@ -60,8 +67,8 @@ public class VehicleServiceImpl implements VehicleService{
             return toTransportDto((Transport) electricScooter);
         }
         Bicycle bicycle = new Bicycle();
-        bicycle.setCoordinateX(parking.getCoordinateX() + parking.getRadius() * 0.3);
-        bicycle.setCoordinateY(parking.getCoordinateY() + parking.getRadius() * 0.4);
+        bicycle.setLongitude(parking.getLongitude() + parking.getRadius() * 0.3);
+        bicycle.setLatitude(parking.getLatitude() + parking.getRadius() * 0.4);
         bicycle.setTransportStatus(TransportStatus.FREE);
         bicycle.setType(createTransportDto.getType());
         bicycle.setStatus(Status.WORKING);
@@ -75,11 +82,12 @@ public class VehicleServiceImpl implements VehicleService{
 
     }
 
-    public List<TransportDto> getTransportAll(){
-        logger.info("получение всех транспортов.");
+
+    public List<TransportDto> getVehicles(){
+        logger.info("Получение всех транспортов.");
         List<TransportDto> transportDtoList = new ArrayList<>();
         for (Transport transport : vehicleRepository.findByStatus(Status.WORKING)){
-            transportDtoList.add(toTransportDto(transport));
+            transportDtoList.add(toTransportDtoMapper(transport));
         }
         return transportDtoList;
     }
@@ -163,6 +171,7 @@ public class VehicleServiceImpl implements VehicleService{
         if (transport.getType() == Type.ELECTRIC_SCOOTER) {
             ElectricScooter electricScooter = (ElectricScooter) transport;
 
+
             transportDto.setId(electricScooter.getId());
             transportDto.setNumber(transport.getNumber());
             transportDto.setStatus(transport.getStatus());
@@ -171,6 +180,9 @@ public class VehicleServiceImpl implements VehicleService{
             transportDto.setCondition(electricScooter.getCondition());
             transportDto.setBattery(electricScooter.getBattery());
             transportDto.setMaxSpeed(electricScooter.getMaxSpeed());
+            transportDto.setLongitude(transport.getLongitude());
+            transportDto.setLatitude(transport.getLatitude());
+            transportDto.setTransportStatus(transport.getTransportStatus());
         } else {
             transportDto.setId(transport.getId());
             transportDto.setNumber(transport.getNumber());
@@ -178,9 +190,24 @@ public class VehicleServiceImpl implements VehicleService{
             transportDto.setType(transport.getType());
             transportDto.setCurrentParking(ParkingServiceImpl.toParkingDto(transport.getCurrentParking()));
             transportDto.setCondition(transport.getCondition());
+            transportDto.setLongitude(transport.getLongitude());
+            transportDto.setLatitude(transport.getLatitude());
+            transportDto.setTransportStatus(transport.getTransportStatus());
         }
         return transportDto;
     }
+
+
+    public TransportDto toTransportDtoMapper(Transport transport) {
+        if (transport.getType() == Type.ELECTRIC_SCOOTER) {
+            ElectricScooter electricScooter = (ElectricScooter) transport;
+            return transportMapper.electricScooterToDto(electricScooter);
+        } else{
+            return transportMapper.bicycleToDto(transport);
+        }
+    }
+
+
 
 
 }

@@ -5,14 +5,11 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.TransportStatus;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleService;
-import lombok.SneakyThrows;
-import org.glassfish.jersey.server.wadl.internal.generators.resourcedoc.xhtml.XhtmlElementType;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.bots.AbsSender;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
 

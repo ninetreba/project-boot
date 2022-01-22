@@ -1,6 +1,7 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.configuration.SecurityContext;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
@@ -20,12 +21,17 @@ public class UserServiceImpl implements UserService{
     }
 
 
+    public User getCurrentUser(){
+        return getById(SecurityContext.get().getId());
+    }
+
+
     @Override
-    public UserDto getUser(Long id) {
+    public User getUser(Long id) {
         User user = userRepository.findById(id).orElseThrow(
                 ()-> new BusinessRuntimeException(ErrorCodeEnum.USER_NOT_FOUND)
         );
-        return toUserDto(user);
+        return user;
     }
 
     @Override

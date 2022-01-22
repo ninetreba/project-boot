@@ -12,9 +12,8 @@ public class ParkingDto {
 
     private String name;
 
-    private Double coordinateX;
-
-    private Double coordinateY;
+    private Double longitude;
+    private Double latitude;
 
     private Double radius;
 

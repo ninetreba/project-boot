@@ -1,5 +1,6 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.configuration.SecurityContext;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.configuration.TripProperties;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
@@ -13,14 +14,19 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.StatusRent;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.TransportStatus;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.Role;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.TripRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.time.temporal.ChronoUnit.SECONDS;
 
@@ -33,6 +39,26 @@ public class TripServiceImpl implements TripService{
     private final TripProperties tripProperties;
     private final ParkingService parkingService;
 
+    private final Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
+
+
+    public List<RentDto> getTrips(Long id){
+        logger.info("получение всех парковок пользователя под id = [{}]", id);
+
+        List<RentDto> rentDtoList = new ArrayList<>();
+        for (Rent rent : tripRepository.findByUser_Id(id)){
+            rentDtoList.add(toRentDto(rent));
+        }
+        return rentDtoList;
+    }
+
+    public List<RentDto> getUserTrips(){
+        List<RentDto> rentDtoList = new ArrayList<>();
+        for (Rent rent : tripRepository.findByUser_Id(SecurityContext.get().getId())){
+            rentDtoList.add(toRentDto(rent));
+        }
+        return rentDtoList;
+    }
 
 
     public RentDto createRent(CreateRentDto createRentDto) {
@@ -128,8 +154,24 @@ public class TripServiceImpl implements TripService{
     }
 
 
+    public List<RentDto> getAllRent(){
+        logger.info("получение всех поездок");
+
+        if(SecurityContext.get().getRole() != Role.ADMIN){
+            return getUserTrips();
+        }
+
+        List<RentDto> rentDtoList = new ArrayList<>();
+        for (Rent rent : tripRepository.findAll()){
+            rentDtoList.add(toRentDto(rent));
+        }
+        return rentDtoList;
+
+    }
+
     public RentDto toRentDto(Rent rent){
-        RentDto rentDto = RentDto.builder().id(rent.getId())
+        RentDto rentDto = RentDto.builder()
+                .id(rent.getId())
                 .statusRent(rent.getStatusRent())
                 .cost(rent.getCost())
                 .userDto(UserServiceImpl.toUserDto(rent.getUser()))

@@ -7,6 +7,8 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
+
 @Getter
 @Setter
 public class TransportDto {
@@ -15,8 +17,14 @@ public class TransportDto {
     private Type type;
     private Condition condition;
     private Status status;
-    private int battery = -1;
-    private int maxSpeed = -1;
-    private ParkingDtoShort currentParking;
+    private int battery;
+    private int maxSpeed;
+
+    private ParkingDto currentParking;
+
+    private TransportStatus transportStatus;
+
+    private Double longitude;
+    private Double latitude;
 
 }

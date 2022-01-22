@@ -23,11 +23,8 @@ public class Parking {
 
     private String name;
 
-    @Column(name = "COORDINATE_X")
-    private Double coordinateX; // Double
-
-    @Column(name = "COORDINATE_Y")
-    private Double coordinateY;
+    private Double longitude;
+    private Double latitude;
 
     private Double radius;
 

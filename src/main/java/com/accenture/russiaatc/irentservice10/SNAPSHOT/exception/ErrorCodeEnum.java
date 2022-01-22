@@ -1,7 +1,6 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.exception;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 import java.text.MessageFormat;
@@ -18,7 +17,8 @@ public enum ErrorCodeEnum {
     TOO_MUCH_RENTS("Слишком много активных аренд"),
     INCORRECT_DATA("Некорректные данные"),
     TELEGRAM_SEND_MESSAGE_ERROR("Ошибка при отправке сообщения в телеграм"),
-    SET_ID_TRANSPORT("Задайте id транспорта.");
+    SET_ID_TRANSPORT("Задайте id транспорта."),
+    BAD_TOKEN("плохой токен");
 
 
     private final String messageTemplate;

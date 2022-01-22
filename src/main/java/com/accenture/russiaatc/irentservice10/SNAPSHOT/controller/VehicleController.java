@@ -6,30 +6,27 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateTransport
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// клиент - поиск по статусу, типу, парковке
-// admin - создание всех типов, удаление(изм статуса), поиск по статусу, типу, парковке
 
+@AllArgsConstructor
 @RestController
-@RequestMapping("/vehicle")
+@RequestMapping("/vehicles")
 public class VehicleController {
     private final VehicleService vehicleService;
 
-    @Autowired
-    public VehicleController(VehicleService vehicleService) { this.vehicleService = vehicleService;}
 
-
-    @GetMapping("/all")
-    public List<TransportDto> getParkingList(){
-        return vehicleService.getTransportAll();
+    @GetMapping
+    public List<TransportDto> getVehicles(){
+        return vehicleService.getVehicles();
     }
 
+
     @GetMapping("/{id}")
-    public TransportDto getParking(@PathVariable Long id){
+    public TransportDto getVehicle(@PathVariable Long id){
         return vehicleService.getTransport(id);
     }
 

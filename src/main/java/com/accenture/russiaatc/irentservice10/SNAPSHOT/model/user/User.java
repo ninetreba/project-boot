@@ -1,7 +1,6 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.UserDto;
 import lombok.*;
 import lombok.experimental.Accessors;
 

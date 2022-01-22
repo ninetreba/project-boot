@@ -1,29 +1,31 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.controller;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.mapper.UserMapper;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.UserDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// Реализовать UserController с операцией получения данных текущего пользователя.
+
+@AllArgsConstructor
 @RestController
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;
+    private final UserMapper userMapper;
 
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+
+    @GetMapping("/current")
+    public UserDto getCurrentUser(){
+        return userMapper.modelToDto(userService.getCurrentUser());
     }
-
 
     @GetMapping("/{id}")
     public UserDto getUser(@PathVariable Long id){
-        return userService.getUser(id);
+        return userMapper.modelToDto(userService.getUser(id));
     }
-
 
 }

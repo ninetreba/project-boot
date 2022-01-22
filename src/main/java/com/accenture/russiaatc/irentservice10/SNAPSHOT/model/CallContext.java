@@ -1,20 +1,17 @@
-package com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto;
+package com.accenture.russiaatc.irentservice10.SNAPSHOT.model;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.Role;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-
-
-@Getter
 @Setter
-public class UserDto {
+@Getter
+@AllArgsConstructor
+@Builder
+public class CallContext {
     private Long id;
     private String login;
-    private BigDecimal balance;
     private Role role;
-
-    public UserDto(){}
-
 }
