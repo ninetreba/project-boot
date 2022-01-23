@@ -1,8 +1,8 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CloseRentDto;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.RentDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.Rent;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingService;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripService;
@@ -44,11 +44,11 @@ public class FinishTripCommand extends MyBotCommand{
         closeRentDto.setIdUser(client.getId());
         closeRentDto.setIdParking(parking.getId());
 
-        RentDto rentDto = tripService.closeRent(closeRentDto);
+        Rent rent = tripService.closeRent(closeRentDto);
 
         sendAnswer(absSender, chat.getId(),
-                "Поездка на " + strings[0] +" завершена в " + rentDto.getEndRent() +
-                        " и стоимость составила " + rentDto.getCost() + " рублей" + "\n", ParseMode.HTML);
+                "Поездка на " + strings[0] +" завершена в " + rent.getEndRent() +
+                        " и стоимость составила " + rent.getCost() + " рублей" + "\n", ParseMode.HTML);
     }
 
 

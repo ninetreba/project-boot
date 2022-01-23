@@ -10,7 +10,7 @@ import java.util.List;
 public interface ParkingService {
     Parking getParking(Long id);
     Parking getParkingByName(String name);
-    List<ParkingDto> getParkings();
+    List<Parking> getParkings();
     void createParking(CreateParkingDto createParkingDto);
     Parking updateParking(ParkingDto parkingDto);
     Parking deleteParking(Long id);

@@ -6,7 +6,6 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntime
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CloseRentDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateRentDto;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.RentDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.ParkingType;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.Rent;
@@ -18,18 +17,17 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.Role;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.TripRepository;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.time.temporal.ChronoUnit.SECONDS;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class TripServiceImpl implements TripService{
@@ -39,29 +37,18 @@ public class TripServiceImpl implements TripService{
     private final TripProperties tripProperties;
     private final ParkingService parkingService;
 
-    private final Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
 
+    public List<Rent> getAllRent(){
+        log.info("получение всех поездок");
 
-    public List<RentDto> getTrips(Long id){
-        logger.info("получение всех парковок пользователя под id = [{}]", id);
-
-        List<RentDto> rentDtoList = new ArrayList<>();
-        for (Rent rent : tripRepository.findByUser_Id(id)){
-            rentDtoList.add(toRentDto(rent));
+        if(SecurityContext.get().getRole() != Role.ADMIN){
+            return tripRepository.findByUser_Id(SecurityContext.get().getId());
         }
-        return rentDtoList;
-    }
-
-    public List<RentDto> getUserTrips(){
-        List<RentDto> rentDtoList = new ArrayList<>();
-        for (Rent rent : tripRepository.findByUser_Id(SecurityContext.get().getId())){
-            rentDtoList.add(toRentDto(rent));
-        }
-        return rentDtoList;
+        return tripRepository.findAll();
     }
 
 
-    public RentDto createRent(CreateRentDto createRentDto) {
+    public Rent createRent(CreateRentDto createRentDto) {
         if (tripRepository.countByUser_IdAndStatusRent(createRentDto.getIdUser(), StatusRent.IN_PROGRESS) >= tripProperties.getMaxNumberTrips()) {
             throw new BusinessRuntimeException(ErrorCodeEnum.TOO_MUCH_RENTS);
         }
@@ -102,12 +89,11 @@ public class TripServiceImpl implements TripService{
 
         vehicleService.save(transport);
         tripRepository.save(rent);
-        return toRentDto(rent);
+        return rent;
     }
 
 
-
-    public RentDto closeRent(CloseRentDto closeRentDto){
+    public Rent closeRent(CloseRentDto closeRentDto){
         Rent rent = tripRepository.findByUser_IdAndStatusRentAndTransport_Id(closeRentDto.getIdUser(), StatusRent.IN_PROGRESS, closeRentDto.getIdTransport());
 
         Transport transport = vehicleService.getById(closeRentDto.getIdTransport());
@@ -150,41 +136,8 @@ public class TripServiceImpl implements TripService{
         vehicleService.save(transport);
         tripRepository.save(rent);
         userService.save(user);
-        return toRentDto(rent);
+        return rent;
     }
-
-
-    public List<RentDto> getAllRent(){
-        logger.info("получение всех поездок");
-
-        if(SecurityContext.get().getRole() != Role.ADMIN){
-            return getUserTrips();
-        }
-
-        List<RentDto> rentDtoList = new ArrayList<>();
-        for (Rent rent : tripRepository.findAll()){
-            rentDtoList.add(toRentDto(rent));
-        }
-        return rentDtoList;
-
-    }
-
-    public RentDto toRentDto(Rent rent){
-        RentDto rentDto = RentDto.builder()
-                .id(rent.getId())
-                .statusRent(rent.getStatusRent())
-                .cost(rent.getCost())
-                .userDto(UserServiceImpl.toUserDto(rent.getUser()))
-                .transportDto(VehicleServiceImpl.toTransportDto(rent.getTransport()))
-                .startParkingDto(ParkingServiceImpl.toParkingDto(rent.getStartParking()))
-                .startRent(rent.getStartRent())
-                .endRent(rent.getEndRent()).build();
-        if (rent.getEndParking() != null){
-            rentDto.setEndParkingDto(ParkingServiceImpl.toParkingDto(rent.getEndParking()));
-        }
-        return rentDto;
-    }
-
 
 
 }

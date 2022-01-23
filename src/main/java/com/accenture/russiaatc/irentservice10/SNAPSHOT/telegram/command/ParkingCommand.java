@@ -1,6 +1,6 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command;
 
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingService;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.objects.Chat;
@@ -19,10 +19,10 @@ public class ParkingCommand extends MyBotCommand {
 
     @Override
     public void executeCommand(AbsSender absSender, User user, Chat chat, String[] strings){
-        List<ParkingDto> parkings = parkingService.getParkings();
+        List<Parking> parkings = parkingService.getParkings();
 
         StringBuilder sb = new StringBuilder();
-        for(ParkingDto parking : parkings){
+        for(Parking parking : parkings){
             sb.append("\uD83C\uDD7F️ Название: ").append(parking.getName()).append(", тип: ").append(parking.getParkingType()).append("\n");
         }
 

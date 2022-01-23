@@ -1,5 +1,6 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.controller;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.mapper.TripMapper;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.*;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripService;
 import lombok.AllArgsConstructor;
@@ -13,23 +14,22 @@ import java.util.List;
 @RequestMapping("/trips")
 public class TripController {
     private final TripService tripService;
+    private final TripMapper tripMapper;
 
     @GetMapping
     public List<RentDto> getAllRent(){
-        return tripService.getAllRent();
+        return tripMapper.toDtoList(tripService.getAllRent());
     }
 
     @PostMapping
     public RentDto createRent(@RequestBody CreateRentDto createRentDto){
-        return tripService.createRent(createRentDto);
+        return tripMapper.toDto(tripService.createRent(createRentDto));
     }
 
     @PutMapping
     public RentDto closeRent(@RequestBody CloseRentDto closeRentDto){
-        return tripService.closeRent(closeRentDto);
+        return tripMapper.toDto(tripService.closeRent(closeRentDto));
     }
-
-
 
 
 }

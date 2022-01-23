@@ -2,6 +2,7 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.TransportDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.TransportStatus;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleService;
@@ -24,7 +25,7 @@ public class SearchVehicleCommand extends MyBotCommand {
 
     @Override
     public void executeCommand(AbsSender absSender, User user, Chat chat, String[] strings){
-        List<TransportDto> transports = vehicleService.findByTransportStatusAndStatus(TransportStatus.FREE,
+        List<Transport> transports = vehicleService.findByTransportStatusAndStatus(TransportStatus.FREE,
                 Status.WORKING);
         if (transports.isEmpty()){
             sendAnswer(absSender, chat.getId(),
@@ -38,13 +39,13 @@ public class SearchVehicleCommand extends MyBotCommand {
     }
 
 
-    private String vehicleToString(TransportDto transportDto) {
-        if (transportDto.getType() == Type.BICYCLE) {
-            return "\uD83D\uDEB4\u200D♂️Рег. номер: " + transportDto.getNumber() + "\t" + ", тип ТС: " + transportDto.getType() + "\t" +
-                    ", текущая парковка: " + transportDto.getCurrentParking().getName();
+    private String vehicleToString(Transport transport) {
+        if (transport.getType() == Type.BICYCLE) {
+            return "\uD83D\uDEB4\u200D♂️Рег. номер: " + transport.getNumber() + "\t" + ", тип ТС: " + transport.getType() + "\t" +
+                    ", текущая парковка: " + transport.getCurrentParking().getName();
         } else {
-            return "\uD83D\uDEF4 Рег. номер: " + transportDto.getNumber() + "\t" + ", тип ТС: " + transportDto.getType() + "\t" +
-                    ", текущая парковка: " + transportDto.getCurrentParking().getName();
+            return "\uD83D\uDEF4 Рег. номер: " + transport.getNumber() + "\t" + ", тип ТС: " + transport.getType() + "\t" +
+                    ", текущая парковка: " + transport.getCurrentParking().getName();
         }
     }
 

@@ -14,7 +14,6 @@ public class ParkingDto {
 
     private Double longitude;
     private Double latitude;
-
     private Double radius;
 
     private ParkingType parkingType;

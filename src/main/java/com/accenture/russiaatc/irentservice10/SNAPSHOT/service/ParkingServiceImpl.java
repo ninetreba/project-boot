@@ -2,40 +2,29 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.service;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.mapper.ParkingMapper;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.ParkingDto;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.parking.Parking;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.ParkingRepository;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
-// пользователь - получение всех парковок
-// admin - созд, измен, удаление(изм статуса), получение всех парковок
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class ParkingServiceImpl implements ParkingService{
-    private final Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
     private final ParkingRepository parkingRepository;
-    private final ParkingMapper mapper;
 
 
     @Override
-    public List<ParkingDto> getParkings() {
-        logger.info("получение всех парковок.");
-
-        List<ParkingDto> parkingDtoList = new ArrayList<>();
-        for (Parking parking : parkingRepository.findAllByStatus(Status.WORKING)){
-            parkingDtoList.add(mapper.toDto(parking));
-        }
-        return parkingDtoList;
+    public List<Parking> getParkings() {
+        log.info("получение всех парковок.");
+        return parkingRepository.findAllByStatus(Status.WORKING);
     }
 
 
@@ -45,6 +34,7 @@ public class ParkingServiceImpl implements ParkingService{
                 () -> new BusinessRuntimeException(ErrorCodeEnum.PARKING_NOT_FOUND)
         );
     }
+
 
     public Parking getParkingByName(String name){
         return parkingRepository.findByName(name).orElseThrow(
@@ -63,7 +53,6 @@ public class ParkingServiceImpl implements ParkingService{
         parking.setRadius(createParkingDto.getRadius());
         parking.setName(createParkingDto.getName());
         parkingRepository.save(parking);
-        //return toParkingDto(parking);
     }
 
     @Override
@@ -91,6 +80,7 @@ public class ParkingServiceImpl implements ParkingService{
         return parking;
     }
 
+
     private boolean isValid(ParkingDto parkingDto){
         if (parkingDto.getLongitude() >= 0 && parkingDto.getLatitude() >= 0 && parkingDto.getRadius() > 0
         && parkingDto.getParkingType() != null && parkingDto.getStatus() != null) {
@@ -98,23 +88,6 @@ public class ParkingServiceImpl implements ParkingService{
         }
         return false;
     }
-
-
-    public static ParkingDto toParkingDto (Parking parking){
-        ParkingDto parkingDto = new ParkingDto();
-        parkingDto.setId(parking.getId());
-        parkingDto.setName(parking.getName());
-
-        parkingDto.setParkingType(parking.getParkingType());
-        parkingDto.setStatus(parking.getStatus());
-
-        parkingDto.setLatitude(parking.getLatitude());
-        parkingDto.setLongitude(parking.getLongitude());
-        parkingDto.setRadius(parking.getRadius());
-        return parkingDto;
-    }
-    
-
 
 
 

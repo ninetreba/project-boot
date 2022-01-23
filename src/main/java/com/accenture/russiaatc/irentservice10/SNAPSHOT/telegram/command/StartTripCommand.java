@@ -3,7 +3,7 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.BusinessRuntimeException;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.exception.ErrorCodeEnum;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.CreateRentDto;
-import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.dto.RentDto;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.rent.Rent;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripService;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleService;
@@ -43,10 +43,10 @@ public class StartTripCommand  extends MyBotCommand {
         createRentDto.setIdTransport(transport.getId());
         createRentDto.setIdUser(client.getId());
 
-        RentDto rentDto = tripService.createRent(createRentDto);
+        Rent rent = tripService.createRent(createRentDto);
 
         sendAnswer(absSender, chat.getId(),
-                "Поездка на " + strings[0] +" начата в " + rentDto.getStartRent() + "\n", ParseMode.HTML);
+                "Поездка на " + strings[0] +" начата в " + rent.getStartRent() + "\n", ParseMode.HTML);
     }
 
 

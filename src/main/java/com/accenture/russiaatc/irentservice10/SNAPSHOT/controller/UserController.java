@@ -18,14 +18,16 @@ public class UserController {
     private final UserMapper userMapper;
 
 
+
     @GetMapping("/current")
     public UserDto getCurrentUser(){
-        return userMapper.modelToDto(userService.getCurrentUser());
+        return userMapper.toDto(userService.getCurrentUser());
     }
 
     @GetMapping("/{id}")
     public UserDto getUser(@PathVariable Long id){
-        return userMapper.modelToDto(userService.getUser(id));
+        return userMapper.toDto(userService.getById(id));
     }
+
 
 }

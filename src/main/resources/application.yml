@@ -13,6 +13,12 @@ spring:
     username: sa
     password:
 
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yaml
+    enabled: true
+
+jwt:
+  secret: secret
 
 bot:
   name: tripprojectbot

@@ -9,6 +9,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHeaders;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.AsyncHandlerInterceptor;
@@ -19,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 @Component
 public class RestControllerSecurityInterceptor implements AsyncHandlerInterceptor {
-
-    private String secret = "secret";
+    @Value("${jwt.secret}")
+    private String secret;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
