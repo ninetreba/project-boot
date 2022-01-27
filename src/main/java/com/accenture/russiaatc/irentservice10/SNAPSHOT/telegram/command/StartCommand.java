@@ -2,7 +2,6 @@ package com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command;
 
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.TelegramUserService;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.objects.User;
 
 import org.telegram.telegrambots.meta.api.objects.Chat;
@@ -27,8 +26,10 @@ public class StartCommand extends MyBotCommand {
                 "Вы зарегистрированны под логином " + client.getLogin() + ".\n" +
                         "Ваш пароль " + client.getPassword() + ".\n" +
                         "Ваш баланс " + client.getBalance() + ".\n" +
-                        "Для поиска свободного транспорта используйте команду /search", ParseMode.HTML);
+                        "Для поиска свободного транспорта используйте команду /search", true);
     }
+
+
 
 
 }

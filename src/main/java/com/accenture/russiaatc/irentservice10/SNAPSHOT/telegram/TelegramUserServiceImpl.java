@@ -6,6 +6,7 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.Role;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -13,17 +14,14 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.Random;
 
+@AllArgsConstructor
 @Service
 public class TelegramUserServiceImpl implements TelegramUserService {
      private final UserRepository userRepository;
+
     @Value("${balance.start}")
      private  BigDecimal startBalance;
 
-
-    @Autowired
-    public TelegramUserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public User addTelegramUser(org.telegram.telegrambots.meta.api.objects.User user) {
@@ -32,6 +30,7 @@ public class TelegramUserServiceImpl implements TelegramUserService {
                 String.format("%s %s", user.getLastName(), user.getFirstName());
 
         Random random = new Random();
+
 
         if (!userRepository.findByLogin(userName).isPresent()) {
             User userEntity = new User();

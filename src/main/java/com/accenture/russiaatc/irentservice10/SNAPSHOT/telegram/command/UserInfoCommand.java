@@ -27,7 +27,7 @@ public class UserInfoCommand extends MyBotCommand {
         sendAnswer(absSender, chat.getId(),
                     "Ваш логин " + client.getLogin() + ".\n" +
                         "Ваш пароль " + client.getPassword() + ".\n" +
-                        "Ваш баланс " + client.getBalance() + ".\n", ParseMode.HTML);
+                        "Ваш баланс " + client.getBalance() + ".\n", true);
     }
 
 

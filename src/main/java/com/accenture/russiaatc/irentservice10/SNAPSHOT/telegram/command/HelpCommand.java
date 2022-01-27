@@ -1,10 +1,10 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.command;
 
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.bots.AbsSender;
+
 
 @Component
 public class HelpCommand extends MyBotCommand {
@@ -14,7 +14,10 @@ public class HelpCommand extends MyBotCommand {
     }
 
     @Override
-    public void executeCommand(AbsSender absSender, User user, Chat chat, String[] strings){
+    public void executeCommand(AbsSender absSender, User user, Chat chat, String[] strings) {
+
+        //chat.getId().toString() + " hmhm - " + user.getId()  - the same
+
         sendAnswer(absSender, chat.getId(),
                 "/start - Начать работу с ботом" + ".\n" +
                         "/userinfo - Получить информацию о своем аккаунте" + ".\n" +
@@ -22,8 +25,10 @@ public class HelpCommand extends MyBotCommand {
                         "/parking - Список парковок" + ".\n" +
                         "/starttrip id(рег номер ТС) - Начать поездку" + ".\n" +
                         "/finishtrip id(рег номер ТС) name(название парковки) - Закончить поездку" + ".\n" +
-                        "/help - Получить информацию о возможностях бота", ParseMode.HTML);
+                        "/help - Получить информацию о возможностях бота", false);
     }
+
+
 
 
 }

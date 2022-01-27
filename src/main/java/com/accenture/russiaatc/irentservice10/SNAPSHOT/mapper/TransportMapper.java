@@ -26,6 +26,7 @@ public interface TransportMapper {
         }
     }
 
+
     default List<TransportDto> toDtoList(List<Transport> transports){
         List<TransportDto> transportDtoList = new ArrayList<>();
         for (Transport transport : transports){
@@ -33,6 +34,7 @@ public interface TransportMapper {
         }
         return transportDtoList;
     }
+
 
 
 }

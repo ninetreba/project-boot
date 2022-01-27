@@ -46,7 +46,7 @@ public class StartTripCommand  extends MyBotCommand {
         Rent rent = tripService.createRent(createRentDto);
 
         sendAnswer(absSender, chat.getId(),
-                "Поездка на " + strings[0] +" начата в " + rent.getStartRent() + "\n", ParseMode.HTML);
+                "Поездка на " + strings[0] +" начата в " + rent.getStartRent() + "\n", false);
     }
 
 

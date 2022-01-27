@@ -48,7 +48,7 @@ public class FinishTripCommand extends MyBotCommand{
 
         sendAnswer(absSender, chat.getId(),
                 "Поездка на " + strings[0] +" завершена в " + rent.getEndRent() +
-                        " и стоимость составила " + rent.getCost() + " рублей" + "\n", ParseMode.HTML);
+                        " и стоимость составила " + rent.getCost() + " рублей" + "\n", false);
     }
 
 

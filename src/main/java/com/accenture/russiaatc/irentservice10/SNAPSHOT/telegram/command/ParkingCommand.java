@@ -26,7 +26,7 @@ public class ParkingCommand extends MyBotCommand {
             sb.append("\uD83C\uDD7F️ Название: ").append(parking.getName()).append(", тип: ").append(parking.getParkingType()).append("\n");
         }
 
-        sendAnswer(absSender, chat.getId(), sb.toString(), ParseMode.HTML);
+        sendAnswer(absSender, chat.getId(), sb.toString(), false);
     }
 
 
