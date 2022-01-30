@@ -1,5 +1,6 @@
 package com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram;
 
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.UserTelegramRepository;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.ParkingService;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripService;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleService;
@@ -31,7 +32,7 @@ public class TelegramBot extends TelegramLongPollingCommandBot {
     private String botToken;
 
 
-    public TelegramBot(TelegramUserService telegramUserService, VehicleService vehicleService, TripService tripService, ParkingService parkingService, TelegramVehicleService telegramVehicleService) {
+    public TelegramBot(TelegramUserService telegramUserService, VehicleService vehicleService, TripService tripService, ParkingService parkingService, TelegramVehicleService telegramVehicleService,  UserTelegramRepository userTelegramRepository) {
         this.telegramUserService = telegramUserService;
         this.vehicleService = vehicleService;
         this.tripService = tripService;
@@ -45,6 +46,7 @@ public class TelegramBot extends TelegramLongPollingCommandBot {
         this.register(new StartTripCommand(tripService, telegramUserService, vehicleService));
         this.register(new FinishTripCommand(tripService, telegramUserService, vehicleService, parkingService));
         this.register(new HelpCommand());
+        this.register(new LocationCommand());
     }
 
 
@@ -53,15 +55,15 @@ public class TelegramBot extends TelegramLongPollingCommandBot {
     @Override
     public void processNonCommandUpdate(Update update) {
 
+        if (update.hasMessage()) {
             Message message = update.getMessage();
             if (message.hasLocation()) {
 
                 Location location = message.getLocation();
 
-                UserTelegram userTelegram = new UserTelegram();
-                userTelegram.setChatId(message.getChatId());
-                userTelegram.setLatitude(location.getLatitude());
-                userTelegram.setLongitude(location.getLongitude());
+                UserTelegram userTelegram = userTelegramRepository.findById(message.getChatId()).orElseThrow();
+                userTelegram.setLatitude(location.getLatitude().doubleValue());
+                userTelegram.setLongitude(location.getLongitude().doubleValue());
                 userTelegramRepository.save(userTelegram);
 
                 SendMessage sendLocationMessage = new SendMessage();
@@ -75,7 +77,7 @@ public class TelegramBot extends TelegramLongPollingCommandBot {
                 }
                 return;
             }
-
+        }
 
 
             String command = update.getMessage().getText().substring(1);

@@ -4,7 +4,6 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Transport
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.transport.Type;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleService;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.TelegramVehicleService;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
@@ -96,6 +95,7 @@ public class SearchVehicleCommand extends MyBotCommand {
                     ", текущая парковка: " + transport.getCurrentParking().getName();
         }
     }
+
 
 
 }

@@ -16,8 +16,6 @@ public class HelpCommand extends MyBotCommand {
     @Override
     public void executeCommand(AbsSender absSender, User user, Chat chat, String[] strings) {
 
-        //chat.getId().toString() + " hmhm - " + user.getId()  - the same
-
         sendAnswer(absSender, chat.getId(),
                 "/start - Начать работу с ботом" + ".\n" +
                         "/userinfo - Получить информацию о своем аккаунте" + ".\n" +
@@ -25,6 +23,7 @@ public class HelpCommand extends MyBotCommand {
                         "/parking - Список парковок" + ".\n" +
                         "/starttrip id(рег номер ТС) - Начать поездку" + ".\n" +
                         "/finishtrip id(рег номер ТС) name(название парковки) - Закончить поездку" + ".\n" +
+                        "/location - Поделиться локацией" + ".\n" +
                         "/help - Получить информацию о возможностях бота", false);
     }
 

@@ -21,9 +21,10 @@ public class TelegramVehicleServiceImpl implements TelegramVehicleService {
 
     @Override
     public List<Transport> getVehiclesTelegram(Long chatId) {
+
+
         UserTelegram userTelegram = userTelegramRepository.findById(chatId).orElseThrow(
                 ()-> new BusinessRuntimeException(ErrorCodeEnum.USER_NOT_FOUND));
-
 
         if (userTelegram.getLatitude() != null){
             double userLatitude =  userTelegram.getLatitude();
@@ -44,13 +45,15 @@ public class TelegramVehicleServiceImpl implements TelegramVehicleService {
             List<Transport> sortedTransports = new ArrayList<>();
             map.forEach((key, value) -> sortedTransports.add(vehicleService.findByNumber(key)));
             return sortedTransports;
+        } else {
+            return vehicleService.getVehicles();
         }
 
-        return vehicleService.getVehicles();
+
     }
 
 
-    
+
     private double calcDistanceInMeters(double latitude, double longitude, double userLat, double userLon) {
 
         GeodeticCalculator geoCalc = new GeodeticCalculator();

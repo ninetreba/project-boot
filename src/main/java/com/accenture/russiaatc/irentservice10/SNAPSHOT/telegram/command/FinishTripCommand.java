@@ -9,7 +9,6 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.TripService;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.service.VehicleService;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.telegram.TelegramUserService;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.bots.AbsSender;

@@ -16,9 +16,8 @@ import javax.persistence.*;
 @Table(name = "USER_TG", schema = "PUBLIC")
 public class UserTelegram {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CHAT_ID_TG")
-    private Long chatId;
+    private Long id;
 
     private Double longitude;
     private Double latitude;

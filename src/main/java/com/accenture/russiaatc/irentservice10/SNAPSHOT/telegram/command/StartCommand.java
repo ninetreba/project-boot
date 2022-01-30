@@ -26,7 +26,7 @@ public class StartCommand extends MyBotCommand {
                 "Вы зарегистрированны под логином " + client.getLogin() + ".\n" +
                         "Ваш пароль " + client.getPassword() + ".\n" +
                         "Ваш баланс " + client.getBalance() + ".\n" +
-                        "Для поиска свободного транспорта используйте команду /search", true);
+                        "Для поиска свободного транспорта используйте команду /search", false);
     }
 
 

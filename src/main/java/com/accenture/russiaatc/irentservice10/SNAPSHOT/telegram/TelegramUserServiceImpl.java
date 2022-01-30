@@ -6,21 +6,22 @@ import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.Status;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.Role;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.model.user.User;
 import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.UserRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.accenture.russiaatc.irentservice10.SNAPSHOT.repository.UserTelegramRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.Random;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 public class TelegramUserServiceImpl implements TelegramUserService {
-     private final UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final UserTelegramRepository userTelegramRepository;
 
     @Value("${balance.start}")
-     private  BigDecimal startBalance;
+    private  BigDecimal startBalance;
 
 
     @Override
@@ -30,6 +31,12 @@ public class TelegramUserServiceImpl implements TelegramUserService {
                 String.format("%s %s", user.getLastName(), user.getFirstName());
 
         Random random = new Random();
+
+        System.out.println(user.getId());
+
+        UserTelegram userTelegram = new UserTelegram();
+        userTelegram.setId(user.getId());
+        userTelegramRepository.save(userTelegram);
 
 
         if (!userRepository.findByLogin(userName).isPresent()) {
@@ -46,15 +53,21 @@ public class TelegramUserServiceImpl implements TelegramUserService {
                     ()-> new BusinessRuntimeException(ErrorCodeEnum.USER_NOT_FOUND)
             );
         }
+
+
     }
+
 
 
     @Override
     public User getUser(org.telegram.telegrambots.meta.api.objects.User user){
         String userName = (user.getUserName() != null) ? user.getUserName() :
                 String.format("%s %s", user.getLastName(), user.getFirstName());
+
         return userRepository.findByLogin(userName).orElseThrow();
     }
+
+
 
 
 }
